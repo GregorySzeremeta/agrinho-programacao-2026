@@ -1,140 +1,126 @@
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        document.getElementById("loading-screen").style.opacity = "0";
-        document.getElementById("loading-screen").style.visibility = "hidden";
-    }, 1800);
+// LOADING SCREEN
+window.addEventListener("load", function(){
+    setTimeout(()=>{
+        document.getElementById("loading").style.opacity="0";
+        document.getElementById("loading").style.visibility="hidden";
+    },2000);
 });
 
-/* CONTADOR ANIMADO */
-const counters = document.querySelectorAll('.counter');
+// CONTADORES ANIMADOS
+const counters = document.querySelectorAll(".counter");
 
-const iniciarContador = () => {
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const speed = target / 200;
+counters.forEach(counter=>{
+    counter.innerText='0';
+    const updateCounter = ()=>{
+        const target = +counter.getAttribute('data-target');
+        const c = +counter.innerText;
+        const increment = target / 100;
 
-            if(count < target){
-                counter.innerText = Math.ceil(count + speed).toLocaleString('pt-BR');
-                setTimeout(updateCount, 20);
-            }else{
-                counter.innerText = target.toLocaleString('pt-BR');
-            }
+        if(c < target){
+            counter.innerText = `${Math.ceil(c + increment)}`;
+            setTimeout(updateCounter,25);
+        }else{
+            counter.innerText = target;
         }
-        updateCount();
-    });
-}
-
-let contadorExecutado = false;
-window.addEventListener('scroll', () => {
-    const section = document.querySelector('.counter-section');
-    const pos = section.getBoundingClientRect().top;
-
-    if(pos < window.innerHeight && !contadorExecutado){
-        iniciarContador();
-        contadorExecutado = true;
     }
+    updateCounter();
 });
 
-/* MAPA INTERATIVO PARANÁ */
+// BOTÕES DAS REGIÕES
 function mostrarRegiao(regiao){
-    const info = document.getElementById("info-regiao");
+    const info = document.getElementById("infoRegiao");
 
     if(regiao === "oeste"){
         info.innerHTML = `
-            <h3>🌾 Região Oeste</h3>
-            <p>Maior produtora de soja, milho, frango e suínos. Região de cooperativas gigantes e alta tecnologia agrícola.</p>
+        <h3>🌾 Oeste Paranaense</h3>
+        <p>Maior polo de grãos, aves e suínos do Paraná. Região marcada por cooperativas fortes e tecnologia agrícola de ponta.</p>
         `;
     }
 
     if(regiao === "norte"){
         info.innerHTML = `
-            <h3>☕ Norte Pioneiro</h3>
-            <p>Tradicional no café, frutas e agricultura familiar. Destaque para cafés especiais e citricultura.</p>
-        `;
-    }
-
-    if(regiao === "centro"){
-        info.innerHTML = `
-            <h3>🌲 Centro-Sul</h3>
-            <p>Silvicultura, trigo, cevada e pecuária. Grande preservação ambiental e reflorestamento.</p>
+        <h3>☕ Norte Pioneiro</h3>
+        <p>Conhecido pelo café especial, agricultura familiar e citricultura crescente. Um dos berços históricos da produção rural.</p>
         `;
     }
 
     if(regiao === "sudoeste"){
         info.innerHTML = `
-            <h3>🥛 Sudoeste</h3>
-            <p>Bacias leiteiras fortes, grãos e agricultura diversificada com forte cooperativismo rural.</p>
+        <h3>🥛 Sudoeste</h3>
+        <p>Grande destaque na produção leiteira, milho e soja. Região de forte cooperativismo e sustentabilidade.</p>
+        `;
+    }
+
+    if(regiao === "centro"){
+        info.innerHTML = `
+        <h3>🌲 Centro-Sul</h3>
+        <p>Área de campos nativos, reflorestamento, pecuária e preservação ambiental. Importante equilíbrio entre agro e natureza.</p>
         `;
     }
 }
 
-/* QUIZ */
-function responderQuiz(valor){
-    const resultado = document.getElementById("resultadoQuiz");
+// QUIZ AGRÍCOLA
+const perguntas = [
+{
+    pergunta:"Qual prática ajuda a conservar o solo?",
+    opcoes:["Queimada","Plantio Direto","Desmatamento"],
+    correta:1
+},
+{
+    pergunta:"Qual recurso pode gerar energia limpa na fazenda?",
+    opcoes:["Petróleo","Carvão","Painel Solar"],
+    correta:2
+},
+{
+    pergunta:"O Paraná é destaque nacional em:",
+    opcoes:["Produção de Frango","Produção de Ouro","Produção de Petróleo"],
+    correta:0
+}
+];
 
-    if(valor === 1){
-        resultado.innerHTML = "✅ Correto! A irrigação inteligente reduz o desperdício e preserva a água.";
-        resultado.style.color = "green";
+let atual = 0;
+let pontos = 0;
+
+function carregarQuiz(){
+    const q = document.getElementById("quiz");
+    if(atual < perguntas.length){
+        q.innerHTML = `
+            <h3>${perguntas[atual].pergunta}</h3>
+            ${perguntas[atual].opcoes.map((opcao,index)=>
+                `<button onclick="responder(${index})">${opcao}</button>`
+            ).join('')}
+        `;
     }else{
-        resultado.innerHTML = "❌ Resposta incorreta. Essas práticas prejudicam o meio ambiente.";
-        resultado.style.color = "red";
+        q.innerHTML = `
+            <h2>🎉 Quiz Finalizado!</h2>
+            <p>Você acertou ${pontos} de ${perguntas.length} perguntas.</p>
+        `;
     }
 }
 
-/* EFEITO SCROLL NAVBAR */
-window.addEventListener("scroll", function(){
-    const nav = document.querySelector(".navbar");
-
-    if(window.scrollY > 50){
-        nav.style.background = "rgba(0,0,0,0.80)";
-        nav.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
-    }else{
-        nav.style.background = "rgba(0,0,0,0.55)";
-        nav.style.boxShadow = "none";
+function responder(indice){
+    if(indice === perguntas[atual].correta){
+        pontos++;
     }
-});
+    atual++;
+    carregarQuiz();
+}
 
-/* FORMULARIO */
-const form = document.querySelector(".formulario");
+carregarQuiz();
 
-form.addEventListener("submit", function(e){
+// FORMULÁRIO
+document.getElementById("formContato").addEventListener("submit", function(e){
     e.preventDefault();
-    alert("🌱 Mensagem enviada com sucesso! Obrigado por contribuir com um futuro sustentável.");
+    alert("✅ Mensagem enviada com sucesso! Obrigado pelo contato.");
+    this.reset();
 });
 
-/* ANIMAÇÃO DE APARECER ELEMENTOS */
-const elementos = document.querySelectorAll('.desafio-card, .solucao-card, .counter-box, .compare-card, .quiz-box, .formulario');
+// SCROLL SUAVE DESTACANDO MENU
+const links = document.querySelectorAll('.navbar a');
 
-function revelarAoScroll(){
-    const gatilho = window.innerHeight * 0.85;
-
-    elementos.forEach(el => {
-        const topo = el.getBoundingClientRect().top;
-
-        if(topo < gatilho){
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-            el.style.transition = "1s";
-        }
-    });
-}
-
-elementos.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(40px)";
-});
-
-window.addEventListener("scroll", revelarAoScroll);
-
-/* SCROLL SUAVE MENU */
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-    anchor.addEventListener("click", function(e){
-        e.preventDefault();
-        const destino = document.querySelector(this.getAttribute("href"));
-        destino.scrollIntoView({
-            behavior:"smooth"
-        });
+links.forEach(link=>{
+    link.addEventListener('click', function(){
+        links.forEach(l=>l.style.color="white");
+        this.style.color="#9ccc65";
     });
 });

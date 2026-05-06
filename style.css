@@ -7,13 +7,13 @@
 }
 
 body{
-    background:#f5f7f2;
+    background:#f4f8f1;
     color:#222;
     overflow-x:hidden;
 }
 
 /* LOADING */
-#loading-screen{
+#loading{
     position:fixed;
     width:100%;
     height:100vh;
@@ -27,7 +27,7 @@ body{
     transition:1s;
 }
 
-.loader-circle{
+.spinner{
     width:70px;
     height:70px;
     border:6px solid rgba(255,255,255,0.3);
@@ -41,58 +41,40 @@ body{
     100%{transform:rotate(360deg);}
 }
 
-/* PARTICULAS */
-.particles{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background-image:radial-gradient(rgba(76,175,80,0.15) 2px, transparent 2px);
-    background-size:40px 40px;
-    z-index:-1;
-    animation:mover 30s linear infinite;
-}
-
-@keyframes mover{
-    from{background-position:0 0;}
-    to{background-position:1000px 1000px;}
-}
-
 /* NAVBAR */
 .navbar{
     width:100%;
     position:fixed;
     top:0;
     left:0;
-    background:rgba(0,0,0,0.55);
-    backdrop-filter:blur(10px);
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    background:rgba(0,0,0,0.5);
     z-index:1000;
 }
 
 .logo{
-    color:#fff;
+    color:white;
     font-size:28px;
     font-weight:800;
 }
 
-.menu{
-    list-style:none;
+.navbar ul{
     display:flex;
+    list-style:none;
     gap:25px;
 }
 
-.menu a{
+.navbar a{
     color:white;
     text-decoration:none;
-    font-weight:500;
-    transition:.3s;
+    font-weight:600;
 }
 
-.menu a:hover{
-    color:#7CFC00;
+.navbar a:hover{
+    color:#9ccc65;
 }
 
 /* HERO */
@@ -106,115 +88,57 @@ body{
     color:white;
 }
 
-.hero-bg{
+.hero img{
     position:absolute;
     width:100%;
     height:100%;
     object-fit:cover;
 }
 
-.hero-overlay{
+.overlay{
     position:absolute;
     width:100%;
     height:100%;
     background:rgba(0,0,0,0.55);
 }
 
-.hero-content{
+.hero-text{
     position:relative;
     z-index:2;
     width:80%;
 }
 
-.hero h1{
-    font-size:75px;
+.hero-text h1{
+    font-size:70px;
     font-weight:900;
     line-height:1.1;
 }
 
-.hero h1 span{
-    color:#8BC34A;
+.hero-text span{
+    color:#8bc34a;
 }
 
-.hero p{
-    margin:25px auto;
+.hero-text p{
+    margin:20px auto;
     font-size:22px;
-    max-width:850px;
-}
-
-.hero-buttons{
-    margin-top:30px;
+    max-width:800px;
 }
 
 .btn{
     display:inline-block;
-    padding:16px 30px;
-    margin:10px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.4s;
-}
-
-.green{
+    margin-top:20px;
     background:#43a047;
     color:white;
+    padding:15px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
 }
 
-.green:hover{
-    transform:scale(1.08);
-    background:#2e7d32;
-}
-
-.white{
-    background:white;
-    color:#1b5e20;
-}
-
-.white:hover{
-    transform:scale(1.08);
-}
-
-.scroll{
-    position:absolute;
-    bottom:20px;
-    font-size:40px;
-    animation:sobe 1.5s infinite;
-}
-
-@keyframes sobe{
-    50%{transform:translateY(10px);}
-}
-
-/* GERAL */
-.container{
-    width:85%;
-    margin:auto;
-}
-
-.titulo{
-    text-align:center;
-    font-size:48px;
-    margin-bottom:15px;
-    font-weight:800;
-    color:#1b5e20;
-}
-
-.subtitulo{
-    text-align:center;
-    color:#555;
-    font-size:20px;
-    margin-bottom:50px;
-}
-
-.branco{
-    color:white;
-}
-
-/* COUNTER */
-.counter-section{
-    padding:70px 8%;
+/* CONTADORES */
+.contadores{
     background:#1b5e20;
+    padding:70px 8%;
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:20px;
@@ -222,221 +146,132 @@ body{
     color:white;
 }
 
-.counter-box{
+.box{
     background:rgba(255,255,255,0.08);
     padding:30px;
     border-radius:20px;
-    transition:.4s;
-}
-
-.counter-box:hover{
-    transform:translateY(-10px);
 }
 
 .counter{
-    font-size:48px;
+    font-size:42px;
     font-weight:900;
 }
 
-/* DESAFIO */
-.desafio{
-    padding:100px 0;
-}
-
-.desafio-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-}
-
-.desafio-card{
-    background:white;
-    padding:35px;
-    border-radius:25px;
+/* SEÇÕES */
+.secao{
+    padding:100px 8%;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    transition:.4s;
 }
 
-.desafio-card:hover{
-    transform:translateY(-12px);
-}
-
-.icon{
-    font-size:55px;
+.secao h2{
+    font-size:45px;
+    color:#1b5e20;
     margin-bottom:15px;
 }
 
-/* SOLUCOES */
-.solucoes{
-    background:linear-gradient(135deg,#1b5e20,#388e3c);
-    padding:100px 0;
+.sub{
+    margin-bottom:40px;
+    color:#555;
 }
 
-.solucao-grid{
+.verde{
+    background:linear-gradient(135deg,#2e7d32,#43a047);
+    color:white;
+}
+
+.verde h2{
+    color:white;
+}
+
+/* CARDS */
+.cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:30px;
+    gap:25px;
+    margin-top:40px;
 }
 
-.solucao-card{
+.card{
     background:white;
+    color:#222;
+    padding:30px;
     border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    transition:.4s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.solucao-card:hover{
-    transform:scale(1.05);
-}
-
-.solucao-card img{
+.imgcard img{
     width:100%;
     height:220px;
     object-fit:cover;
+    border-radius:15px;
+    margin-bottom:15px;
 }
 
-.solucao-card h3{
-    padding:20px 20px 10px;
-    color:#1b5e20;
-}
-
-.solucao-card p{
-    padding:0 20px 25px;
-}
-
-/* PARANA */
-.parana{
-    padding:100px 0;
-}
-
-.mapa-box{
-    background:white;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    text-align:center;
-}
-
-.mapa-regioes button{
+/* REGIÕES */
+.botoes-regiao button{
     margin:10px;
     padding:15px 25px;
     border:none;
     background:#43a047;
     color:white;
-    border-radius:30px;
+    border-radius:25px;
     cursor:pointer;
     font-weight:700;
-    transition:.3s;
 }
 
-.mapa-regioes button:hover{
-    background:#1b5e20;
-}
-
-.info-regiao{
+.info{
     margin-top:30px;
-    font-size:20px;
-}
-
-/* COMPARADOR */
-.comparador{
-    padding:100px 0;
-    background:linear-gradient(135deg,#263238,#1b5e20);
-}
-
-.compare-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
-}
-
-.compare-card{
     background:white;
+    padding:30px;
     border-radius:20px;
-    padding:35px;
-}
-
-.compare-card h3{
-    margin-bottom:20px;
-}
-
-.compare-card ul{
-    line-height:2;
-    padding-left:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* QUIZ */
-.quiz{
-    padding:100px 0;
-}
-
-.quiz-box{
-    max-width:700px;
-    margin:auto;
+.quizbox{
+    max-width:600px;
+    margin:30px auto;
     background:white;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    text-align:center;
+    color:#222;
+    padding:30px;
+    border-radius:20px;
 }
 
-.quiz-box button{
-    display:block;
+.quizbox button{
     width:100%;
-    margin:12px 0;
+    margin:10px 0;
     padding:15px;
     border:none;
-    border-radius:12px;
     background:#43a047;
     color:white;
+    border-radius:12px;
     cursor:pointer;
-    font-size:17px;
-    transition:.3s;
+    font-size:16px;
 }
 
-.quiz-box button:hover{
-    background:#1b5e20;
-}
-
-#resultadoQuiz{
-    margin-top:20px;
-    font-size:20px;
-    font-weight:700;
-    color:#1b5e20;
-}
-
-/* CONTATO */
-.contato{
-    padding:100px 0;
-    background:#eef5ea;
-}
-
-.formulario{
-    max-width:700px;
-    margin:auto;
+/* FORM */
+form{
+    max-width:600px;
+    margin:30px auto;
     display:flex;
     flex-direction:column;
-    gap:20px;
+    gap:15px;
 }
 
-.formulario input,
-.formulario textarea{
-    padding:18px;
+form input, form textarea{
+    padding:16px;
     border:none;
-    border-radius:15px;
-    font-size:17px;
+    border-radius:12px;
     box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-.formulario button{
-    padding:18px;
+form button{
+    padding:16px;
     border:none;
     background:#1b5e20;
     color:white;
-    font-size:18px;
-    border-radius:15px;
+    border-radius:12px;
+    font-size:17px;
     cursor:pointer;
 }
 
@@ -445,36 +280,25 @@ footer{
     background:#111;
     color:white;
     text-align:center;
-    padding:40px 20px;
-}
-
-footer h2{
-    margin-bottom:10px;
+    padding:35px;
 }
 
 /* RESPONSIVO */
 @media(max-width:900px){
-
-    .menu{
+    .navbar ul{
         display:none;
     }
 
-    .hero h1{
-        font-size:45px;
+    .hero-text h1{
+        font-size:42px;
     }
 
-    .counter-section,
-    .desafio-grid,
-    .solucao-grid,
-    .compare-grid{
+    .contadores,
+    .cards{
         grid-template-columns:1fr;
     }
 
-    .titulo{
-        font-size:34px;
-    }
-
-    .hero p{
-        font-size:18px;
+    .secao h2{
+        font-size:32px;
     }
 }

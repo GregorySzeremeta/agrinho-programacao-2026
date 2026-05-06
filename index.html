@@ -3,228 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSustentável 2.0 - Agro Forte, Futuro Sustentável</title>
-<link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2909/2909768.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <title>AgroSustentável - Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div id="loading-screen">
-    <div class="loader-circle"></div>
-    <h1>🌱 AgroSustentável</h1>
-    <p>Construindo um futuro melhor...</p>
-</div>
+    <!-- LOADING -->
+    <div id="loading">
+        <div class="spinner"></div>
+        <h1>🌱 AgroSustentável</h1>
+        <p>Construindo um futuro sustentável...</p>
+    </div>
 
-<div class="particles"></div>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌱 AgroSustentável</div>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#desafio">Desafio</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#parana">Paraná</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">🌱 AgroSustentável</div>
-        <ul class="menu">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#desafio">Desafio</a></li>
-            <li><a href="#solucoes">Soluções</a></li>
-            <li><a href="#parana">Paraná</a></li>
-            <li><a href="#comparador">Comparador</a></li>
-            <li><a href="#quiz">Quiz Verde</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section id="inicio" class="hero">
-    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" class="hero-bg">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>AGRO FORTE,<br><span>FUTURO SUSTENTÁVEL</span></h1>
-        <p>O equilíbrio entre produção agrícola e preservação ambiental é o caminho para um amanhã seguro, verde e produtivo.</p>
-        <div class="hero-buttons">
-            <a href="#solucoes" class="btn green">Explorar Soluções</a>
-            <a href="#quiz" class="btn white">Quiz Sustentável</a>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="">
+        <div class="overlay"></div>
+        <div class="hero-text">
+            <h1>AGRO FORTE,<br><span>FUTURO SUSTENTÁVEL</span></h1>
+            <p>Produzir mais, preservar mais e garantir um amanhã verde para todos.</p>
+            <a href="#solucoes" class="btn">Explorar Projeto</a>
         </div>
-    </div>
-    <div class="scroll">⌄</div>
-</section>
+    </section>
 
-<section class="counter-section">
-    <div class="counter-box">
-        <h2 class="counter" data-target="15400000">0</h2>
-        <p>Hectares Cultivados</p>
-    </div>
-    <div class="counter-box">
-        <h2 class="counter" data-target="400000">0</h2>
-        <p>Agricultores</p>
-    </div>
-    <div class="counter-box">
-        <h2 class="counter" data-target="35">0</h2>
-        <p>% Área Preservada</p>
-    </div>
-    <div class="counter-box">
-        <h2 class="counter" data-target="85">0</h2>
-        <p>% Energia Renovável</p>
-    </div>
-</section>
+    <!-- CONTADORES -->
+    <section class="contadores">
+        <div class="box">
+            <h2 class="counter" data-target="15400000">0</h2>
+            <p>Hectares Cultivados</p>
+        </div>
+        <div class="box">
+            <h2 class="counter" data-target="400000">0</h2>
+            <p>Agricultores</p>
+        </div>
+        <div class="box">
+            <h2 class="counter" data-target="35">0</h2>
+            <p>% Área Preservada</p>
+        </div>
+        <div class="box">
+            <h2 class="counter" data-target="85">0</h2>
+            <p>% Energia Renovável</p>
+        </div>
+    </section>
 
-<section id="desafio" class="desafio">
-    <div class="container">
-        <h2 class="titulo">O Grande Desafio do Século</h2>
-        <p class="subtitulo">Produzir alimentos para milhões de pessoas sem comprometer os recursos naturais do planeta.</p>
+    <!-- DESAFIO -->
+    <section id="desafio" class="secao">
+        <h2>O Grande Desafio</h2>
+        <p class="sub">Conciliar desenvolvimento agrícola e preservação ambiental.</p>
 
-        <div class="desafio-grid">
-            <div class="desafio-card">
-                <div class="icon">🌾</div>
-                <h3>Alta Produção</h3>
-                <p>O Paraná está entre os maiores produtores agrícolas do país, sustentando a economia e a alimentação.</p>
+        <div class="cards">
+            <div class="card">
+                <h3>🌾 Produção</h3>
+                <p>O Paraná é potência agrícola nacional.</p>
             </div>
 
-            <div class="desafio-card">
-                <div class="icon">🌍</div>
-                <h3>Preservar a Natureza</h3>
-                <p>Rios, florestas, fauna e solo fértil precisam ser protegidos para garantir o futuro da agricultura.</p>
+            <div class="card">
+                <h3>🌎 Natureza</h3>
+                <p>Solo, rios e florestas precisam ser preservados.</p>
             </div>
 
-            <div class="desafio-card">
-                <div class="icon">⚖️</div>
-                <h3>Equilíbrio</h3>
-                <p>Com inovação, é possível crescer economicamente sem destruir o meio ambiente.</p>
+            <div class="card">
+                <h3>⚖️ Equilíbrio</h3>
+                <p>Tecnologia permite produzir sem destruir.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="solucoes" class="solucoes">
-    <div class="container">
-        <h2 class="titulo branco">Soluções Sustentáveis</h2>
+    <!-- SOLUÇÕES -->
+    <section id="solucoes" class="secao verde">
+        <h2>Soluções Sustentáveis</h2>
 
-        <div class="solucao-grid">
-
-            <div class="solucao-card">
+        <div class="cards">
+            <div class="card imgcard">
                 <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b">
                 <h3>Irrigação Inteligente</h3>
-                <p>Uso racional da água através de sensores e automação.</p>
+                <p>Economia de água e maior eficiência.</p>
             </div>
 
-            <div class="solucao-card">
+            <div class="card imgcard">
                 <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854">
                 <h3>Drones Agrícolas</h3>
-                <p>Monitoramento preciso das lavouras e redução de desperdícios.</p>
+                <p>Monitoramento e precisão no campo.</p>
             </div>
 
-            <div class="solucao-card">
+            <div class="card imgcard">
                 <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8">
                 <h3>Energia Solar</h3>
-                <p>Propriedades rurais gerando sua própria energia limpa.</p>
-            </div>
-
-            <div class="solucao-card">
-                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
-                <h3>Reflorestamento</h3>
-                <p>Recuperação de áreas degradadas e proteção de nascentes.</p>
-            </div>
-
-            <div class="solucao-card">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
-                <h3>Plantio Direto</h3>
-                <p>Preservação do solo e redução da erosão com técnicas modernas.</p>
-            </div>
-
-            <div class="solucao-card">
-                <img src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95">
-                <h3>Compostagem</h3>
-                <p>Reutilização de resíduos orgânicos em fertilizantes naturais.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="parana" class="parana">
-    <div class="container">
-        <h2 class="titulo">Paraná: Celeiro Sustentável</h2>
-        <p class="subtitulo">Regiões que unem produtividade e responsabilidade ambiental.</p>
-
-        <div class="mapa-box">
-            <div class="mapa-regioes">
-                <button onclick="mostrarRegiao('oeste')">Oeste</button>
-                <button onclick="mostrarRegiao('norte')">Norte</button>
-                <button onclick="mostrarRegiao('centro')">Centro-Sul</button>
-                <button onclick="mostrarRegiao('sudoeste')">Sudoeste</button>
-            </div>
-
-            <div id="info-regiao" class="info-regiao">
-                <h3>🌾 Região Oeste</h3>
-                <p>Maior polo de soja, milho, avicultura e cooperativas agroindustriais.</p>
+                <p>Fonte limpa para propriedades rurais.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="comparador" class="comparador">
-    <div class="container">
-        <h2 class="titulo branco">Comparador Ambiental</h2>
-        <p class="subtitulo branco">Veja a diferença entre agricultura tradicional e agricultura sustentável.</p>
+    <!-- PARANÁ -->
+    <section id="parana" class="secao">
+        <h2>Paraná: Celeiro Sustentável</h2>
 
-        <div class="compare-grid">
-            <div class="compare-card ruim">
-                <h3>❌ Tradicional</h3>
-                <ul>
-                    <li>Alto desperdício de água</li>
-                    <li>Uso excessivo de químicos</li>
-                    <li>Maior erosão do solo</li>
-                    <li>Baixa eficiência energética</li>
-                </ul>
-            </div>
-
-            <div class="compare-card boa">
-                <h3>✅ Sustentável</h3>
-                <ul>
-                    <li>Uso inteligente de recursos</li>
-                    <li>Menor impacto ambiental</li>
-                    <li>Proteção do solo e rios</li>
-                    <li>Maior produtividade a longo prazo</li>
-                </ul>
-            </div>
+        <div class="botoes-regiao">
+            <button onclick="mostrarRegiao('oeste')">Oeste</button>
+            <button onclick="mostrarRegiao('norte')">Norte</button>
+            <button onclick="mostrarRegiao('centro')">Centro-Sul</button>
+            <button onclick="mostrarRegiao('sudoeste')">Sudoeste</button>
         </div>
-    </div>
-</section>
 
-<section id="quiz" class="quiz">
-    <div class="container">
-        <h2 class="titulo">Quiz Verde Interativo</h2>
-        <p class="subtitulo">Teste seus conhecimentos sobre sustentabilidade no campo.</p>
-
-        <div class="quiz-box">
-            <h3 id="pergunta">Qual prática ajuda a economizar água na agricultura?</h3>
-
-            <button onclick="responderQuiz(1)">Irrigação Inteligente</button>
-            <button onclick="responderQuiz(2)">Queimada</button>
-            <button onclick="responderQuiz(2)">Desmatamento</button>
-            <button onclick="responderQuiz(2)">Uso excessivo de agrotóxicos</button>
-
-            <p id="resultadoQuiz"></p>
+        <div id="infoRegiao" class="info">
+            <h3>🌾 Oeste</h3>
+            <p>Maior produção de soja, milho, aves e cooperativismo.</p>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contato" class="contato">
-    <div class="container">
-        <h2 class="titulo">Entre em Contato</h2>
-        <form class="formulario">
-            <input type="text" placeholder="Seu Nome" required>
-            <input type="email" placeholder="Seu E-mail" required>
-            <textarea placeholder="Digite sua mensagem"></textarea>
-            <button type="submit">Enviar Mensagem</button>
+    <!-- QUIZ -->
+    <section id="quiz" class="secao verde">
+        <h2>Quiz Verde</h2>
+        <div class="quizbox">
+            <p>Qual prática ajuda a preservar água no campo?</p>
+
+            <button onclick="quiz(1)">Irrigação Inteligente</button>
+            <button onclick="quiz(0)">Queimadas</button>
+            <button onclick="quiz(0)">Desmatamento</button>
+            <button onclick="quiz(0)">Uso excessivo de químicos</button>
+
+            <h3 id="respostaQuiz"></h3>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="secao">
+        <h2>Contato</h2>
+        <form id="formContato">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
         </form>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <h2>🌱 AgroSustentável</h2>
-    <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente.</p>
-    <p>Concurso Agrinho 2026 • Projeto Front-End</p>
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <h2>🌱 AgroSustentável</h2>
+        <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente.</p>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
