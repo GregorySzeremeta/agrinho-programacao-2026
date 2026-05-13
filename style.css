@@ -12,14 +12,13 @@ body{
     overflow-x:hidden;
 }
 
-/* LOADING */
 #loading{
     position:fixed;
     width:100%;
     height:100vh;
     background:linear-gradient(135deg,#1b5e20,#43a047);
     color:white;
-    display:flex;
+     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
@@ -38,37 +37,34 @@ body{
 }
 
 @keyframes girar{
-    100%{transform:rotate(360deg);}
+    to{transform:rotate(360deg);}
 }
 
-/* NAVBAR */
 .navbar{
-    width:100%;
     position:fixed;
     top:0;
-    left:0;
+    width:100%;
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,0.55);
     z-index:1000;
 }
 
 .logo{
-    color:white;
+    color:#fff;
     font-size:28px;
     font-weight:800;
 }
-
 .navbar ul{
     display:flex;
-    list-style:none;
     gap:25px;
+    list-style:none;
 }
 
 .navbar a{
-    color:white;
+    color:#fff;
     text-decoration:none;
     font-weight:600;
 }
@@ -77,15 +73,14 @@ body{
     color:#9ccc65;
 }
 
-/* HERO */
 .hero{
     height:100vh;
     position:relative;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
-    color:white;
+    color:#fff;
 }
 
 .hero img{
@@ -97,15 +92,13 @@ body{
 
 .overlay{
     position:absolute;
-    width:100%;
-    height:100%;
+    inset:0;
     background:rgba(0,0,0,0.55);
 }
-
 .hero-text{
     position:relative;
     z-index:2;
-    width:80%;
+    width:min(900px,90%);
 }
 
 .hero-text h1{
@@ -121,30 +114,27 @@ body{
 .hero-text p{
     margin:20px auto;
     font-size:22px;
-    max-width:800px;
 }
-
 .btn{
     display:inline-block;
     margin-top:20px;
     background:#43a047;
-    color:white;
+    color:#fff;
     padding:15px 28px;
     border-radius:30px;
     text-decoration:none;
     font-weight:700;
 }
 
-/* CONTADORES */
 .contadores{
     background:#1b5e20;
     padding:70px 8%;
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:20px;
+    color:#fff;
     text-align:center;
-    color:white;
-}
+    }
 
 .box{
     background:rgba(255,255,255,0.08);
@@ -157,33 +147,31 @@ body{
     font-weight:900;
 }
 
-/* SEÇÕES */
 .secao{
     padding:100px 8%;
     text-align:center;
 }
 
 .secao h2{
-    font-size:45px;
+     font-size:45px;
     color:#1b5e20;
     margin-bottom:15px;
 }
 
 .sub{
-    margin-bottom:40px;
     color:#555;
+    margin-bottom:40px;
 }
 
 .verde{
     background:linear-gradient(135deg,#2e7d32,#43a047);
-    color:white;
+    color:#fff;
 }
 
-.verde h2{
-    color:white;
+.verde h2,
+.verde .sub{
+    color:#fff;
 }
-
-/* CARDS */
 .cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -192,7 +180,7 @@ body{
 }
 
 .card{
-    background:white;
+    background:#fff;
     color:#222;
     padding:30px;
     border-radius:20px;
@@ -200,56 +188,45 @@ body{
 }
 
 .imgcard img{
-    width:100%;
-    height:220px;
+    width:100%; height:220px;
     object-fit:cover;
     border-radius:15px;
-    margin-bottom:15px;
+    }
+
+.botoes-regiao button,
+.quizbox button,
+form button{
+    cursor:pointer;
 }
 
-/* REGIÕES */
 .botoes-regiao button{
     margin:10px;
     padding:15px 25px;
     border:none;
     background:#43a047;
-    color:white;
+    color:#fff;
     border-radius:25px;
-    cursor:pointer;
     font-weight:700;
 }
-
-.info{
-    margin-top:30px;
-    background:white;
+.info,
+.quizbox{
+    max-width:700px;
+    margin:30px auto 0;
+    background:#fff;
     padding:30px;
     border-radius:20px;
     box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* QUIZ */
-.quizbox{
-    max-width:600px;
-    margin:30px auto;
-    background:white;
-    color:#222;
-    padding:30px;
-    border-radius:20px;
-}
-
 .quizbox button{
     width:100%;
     margin:10px 0;
-    padding:15px;
+    padding:14px;
     border:none;
     background:#43a047;
-    color:white;
-    border-radius:12px;
-    cursor:pointer;
-    font-size:16px;
+    color:#fff;
+    border-radius:10px;
 }
-
-/* FORM */
 form{
     max-width:600px;
     margin:30px auto;
@@ -258,7 +235,8 @@ form{
     gap:15px;
 }
 
-form input, form textarea{
+form input,
+form textarea{
     padding:16px;
     border:none;
     border-radius:12px;
@@ -269,36 +247,22 @@ form button{
     padding:16px;
     border:none;
     background:#1b5e20;
-    color:white;
+    color:#fff;
     border-radius:12px;
     font-size:17px;
-    cursor:pointer;
 }
 
-/* FOOTER */
 footer{
     background:#111;
-    color:white;
+    color:#fff;
     text-align:center;
     padding:35px;
 }
 
-/* RESPONSIVO */
 @media(max-width:900px){
-    .navbar ul{
-        display:none;
-    }
-
-    .hero-text h1{
-        font-size:42px;
-    }
-
+    .navbar ul{display:none;}
+    .hero-text h1{font-size:42px;}
     .contadores,
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .secao h2{
-        font-size:32px;
-    }
+     .cards{grid-template-columns:1fr;}
+    .secao h2{font-size:32px;}
 }

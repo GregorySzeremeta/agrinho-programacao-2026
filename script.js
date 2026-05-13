@@ -1,126 +1,117 @@
-// LOADING SCREEN
-window.addEventListener("load", function(){
-    setTimeout(()=>{
-        document.getElementById("loading").style.opacity="0";
-        document.getElementById("loading").style.visibility="hidden";
-    },2000);
+// Loading
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loading = document.getElementById('loading');
+    loading.style.opacity = '0';
+    loading.style.visibility = 'hidden';
+  }, 1500);
 });
 
-// CONTADORES ANIMADOS
-const counters = document.querySelectorAll(".counter");
+// Counters
+const counters = document.querySelectorAll('.counter');
 
-counters.forEach(counter=>{
-    counter.innerText='0';
-    const updateCounter = ()=>{
-        const target = +counter.getAttribute('data-target');
-        const c = +counter.innerText;
-        const increment = target / 100;
+counters.forEach(counter => {
+  const target = +counter.dataset.target;
+  const increment = Math.max(1, target / 100);
 
-        if(c < target){
-            counter.innerText = `${Math.ceil(c + increment)}`;
-            setTimeout(updateCounter,25);
-        }else{
-            counter.innerText = target;
-        }
+  function update() {
+    const current = +counter.innerText.replace(/\D/g, '') || 0;
+
+    if (current < target) {
+        counter.innerText = Math.ceil(current + increment).toLocaleString('pt-BR');
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target.toLocaleString('pt-BR');
     }
-    updateCounter();
+  }
+
+  update();
 });
 
-// BOTÕES DAS REGIÕES
-function mostrarRegiao(regiao){
-    const info = document.getElementById("infoRegiao");
+// Regiões
+function mostrarRegiao(regiao) {
+  const info = document.getElementById('infoRegiao');
 
-    if(regiao === "oeste"){
-        info.innerHTML = `
-        <h3>🌾 Oeste Paranaense</h3>
-        <p>Maior polo de grãos, aves e suínos do Paraná. Região marcada por cooperativas fortes e tecnologia agrícola de ponta.</p>
-        `;
+  const dados = {
+    oeste: {
+      titulo: '🌾 Oeste Paranaense',
+      texto: 'Maior polo de grãos, aves e suínos do Paraná.'
+    },
+    norte: {
+         titulo: '☕ Norte Pioneiro',
+      texto: 'Referência em cafés especiais e agricultura familiar.'
+    },
+    sudoeste: {
+      titulo: '🥛 Sudoeste',
+      texto: 'Destaque na produção leiteira e cooperativismo.'
+    },
+    centro: {
+      titulo: '🌲 Centro-Sul',
+      texto: 'Equilíbrio entre pecuária, reflorestamento e preservação.'
     }
+  };
 
-    if(regiao === "norte"){
-        info.innerHTML = `
-        <h3>☕ Norte Pioneiro</h3>
-        <p>Conhecido pelo café especial, agricultura familiar e citricultura crescente. Um dos berços históricos da produção rural.</p>
-        `;
-    }
-
-    if(regiao === "sudoeste"){
-        info.innerHTML = `
-        <h3>🥛 Sudoeste</h3>
-        <p>Grande destaque na produção leiteira, milho e soja. Região de forte cooperativismo e sustentabilidade.</p>
-        `;
-    }
-
-    if(regiao === "centro"){
-        info.innerHTML = `
-        <h3>🌲 Centro-Sul</h3>
-        <p>Área de campos nativos, reflorestamento, pecuária e preservação ambiental. Importante equilíbrio entre agro e natureza.</p>
-        `;
-    }
+  info.innerHTML = `
+    <h3>${dados[regiao].titulo}</h3>
+    <p>${dados[regiao].texto}</p>
+    `;
 }
 
-// QUIZ AGRÍCOLA
+// Quiz
 const perguntas = [
-{
-    pergunta:"Qual prática ajuda a conservar o solo?",
-    opcoes:["Queimada","Plantio Direto","Desmatamento"],
-    correta:1
-},
-{
-    pergunta:"Qual recurso pode gerar energia limpa na fazenda?",
-    opcoes:["Petróleo","Carvão","Painel Solar"],
-    correta:2
-},
-{
-    pergunta:"O Paraná é destaque nacional em:",
-    opcoes:["Produção de Frango","Produção de Ouro","Produção de Petróleo"],
-    correta:0
-}
+  {
+    pergunta: 'Qual prática ajuda a conservar o solo?',
+    opcoes: ['Queimada', 'Plantio Direto', 'Desmatamento'],
+    correta: 1
+  },
+  {
+    pergunta: 'Qual fonte gera energia limpa?',
+    opcoes: ['Carvão', 'Painel Solar', 'Diesel'],
+    correta: 1
+     },
+  {
+    pergunta: 'O Paraná é destaque nacional em:',
+    opcoes: ['Frango', 'Petróleo', 'Minério'],
+    correta: 0
+  }
 ];
 
 let atual = 0;
 let pontos = 0;
 
-function carregarQuiz(){
-    const q = document.getElementById("quiz");
-    if(atual < perguntas.length){
-        q.innerHTML = `
-            <h3>${perguntas[atual].pergunta}</h3>
-            ${perguntas[atual].opcoes.map((opcao,index)=>
-                `<button onclick="responder(${index})">${opcao}</button>`
-            ).join('')}
-        `;
-    }else{
-        q.innerHTML = `
-            <h2>🎉 Quiz Finalizado!</h2>
-            <p>Você acertou ${pontos} de ${perguntas.length} perguntas.</p>
-        `;
-    }
+function carregarQuiz() {
+  const quiz = document.getElementById('quizContainer');
+
+  if (atual >= perguntas.length) {
+    quiz.innerHTML = `
+      <h3>🎉 Quiz Finalizado!</h3>
+      <p>Você acertou ${pontos} de ${perguntas.length} perguntas.</p>
+    `;
+     return;
+  }
+
+  const pergunta = perguntas[atual];
+
+  quiz.innerHTML = `
+    <h3>${pergunta.pergunta}</h3>
+    ${pergunta.opcoes
+      .map((opcao, i) => `<button onclick="responder(${i})">${opcao}</button>`)
+      .join('')}
+  `;
 }
 
-function responder(indice){
-    if(indice === perguntas[atual].correta){
-        pontos++;
-    }
-    atual++;
-    carregarQuiz();
+function responder(indice) {
+  if (indice === perguntas[atual].correta) pontos++;
+  atual++;
+  carregarQuiz();
 }
-
 carregarQuiz();
 
-// FORMULÁRIO
-document.getElementById("formContato").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("✅ Mensagem enviada com sucesso! Obrigado pelo contato.");
-    this.reset();
-});
+// Formulário
+const form = document.getElementById('formContato');
 
-// SCROLL SUAVE DESTACANDO MENU
-const links = document.querySelectorAll('.navbar a');
-
-links.forEach(link=>{
-    link.addEventListener('click', function(){
-        links.forEach(l=>l.style.color="white");
-        this.style.color="#9ccc65";
-    });
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  alert('✅ Mensagem enviada com sucesso!');
+  form.reset();
 });
