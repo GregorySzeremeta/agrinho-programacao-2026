@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AgroSustentável | Agro Forte, Futuro Sustentável</title>
 
-  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header" id="topo">
-    <div class="container navbar">
-      <a href="#topo" class="logo">
-        <span class="logo-icon">🌱</span>
-        <span class="logo-text">AgroSustentável</span>
-      </a>
+  <!-- Barra de acessibilidade -->
+  <div class="top-bar">
+    <span>🌱 Agro Forte, Futuro Sustentável</span>
+    <div class="accessibility-controls">
+      <button onclick="increaseFont()">A+</button>
+      <button onclick="decreaseFont()">A-</button>
+      <button onclick="toggleContrast()">◐ Contraste</button>
+    </div>
+  </div>
 
-      <nav class="nav">
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">🌱 AgroSustentável</div>
+
+      <nav class="nav-menu" id="navMenu">
         <a href="#inicio">Início</a>
-        <a href="#sobre">Conheça o Projeto</a>
-        <a href="#impacto">Impacto</a>
-        <a href="#tecnologia">Tecnologia</a>
+        <a href="#sobre">Sobre o Projeto</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#estatisticas">Estatísticas</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <a href="#sobre" class="btn-header">Explorar</a>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero" id="inicio">
     <img
-      src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2200&q=80"
-      alt="Plantação"
+      src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80"
+      alt="Campo agrícola"
       class="hero-bg"
-    >
+    />
+
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <div class="hero-badge">🌎 Paraná • Brasil</div>
+
+      <span class="badge">📍 Paraná • Brasil</span>
 
       <h1>
         Agro Forte,<br>
@@ -53,135 +60,99 @@
       </h1>
 
       <p>
-        Produzir alimentos com responsabilidade ambiental, inovação e
-        tecnologia para construir um futuro mais verde.
+        Tecnologia, inovação e responsabilidade ambiental trabalhando juntas
+        para transformar o campo e construir um futuro melhor.
       </p>
 
       <div class="hero-buttons">
-        <a href="#sobre" class="btn btn-primary">Conheça o Projeto</a>
-        <a href="#impacto" class="btn btn-secondary">Ver Impacto</a>
+        <a href="#sobre" class="btn primary">Conheça o Projeto</a>
+        <a href="#contato" class="btn secondary">Entre em Contato</a>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
+  <!-- Sobre -->
   <section class="section" id="sobre">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Sobre o Projeto</span>
-        <h2>O equilíbrio entre produção e preservação</h2>
+        <h2>Produzir Mais, Preservando o Meio Ambiente</h2>
         <p>
-          O AgroSustentável mostra como o agronegócio pode crescer de forma
-          responsável, preservando solo, água, florestas e biodiversidade.
+          O AgroSustentável mostra como o agronegócio pode unir alta produtividade,
+          preservação dos recursos naturais e desenvolvimento social.
         </p>
       </div>
+    </div>
+  </section>
 
-      <div class="glass-grid">
-        <div class="glass-card">
-          <div class="icon">📈</div>
-          <h3>Alta Produtividade</h3>
-          <p>
-            Uso de tecnologia para aumentar a eficiência no campo.
-          </p>
-        </div>
+  <!-- Benefícios -->
+  <section class="section alt" id="beneficios">
+    <div class="container cards">
+      <div class="card">
+        <div class="icon">🌱</div>
+        <h3>Sustentabilidade</h3>
+        <p>Preservação do solo, da água e da biodiversidade.</p>
+      </div>
 
-        <div class="glass-card">
-          <div class="icon">🌱</div>
-          <h3>Sustentabilidade</h3>
-          <p>
-            Conservação dos recursos naturais para as futuras gerações.
-          </p>
-        </div>
+      <div class="card">
+        <div class="icon">🚜</div>
+        <h3>Tecnologia</h3>
+        <p>Drones, sensores e inteligência artificial no campo.</p>
+      </div>
 
-        <div class="glass-card">
-          <div class="icon">🤝</div>
-          <h3>Responsabilidade Social</h3>
-          <p>
-            Geração de renda, empregos e desenvolvimento regional.
-          </p>
-        </div>
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Produtividade</h3>
+        <p>Maior rendimento com menor impacto ambiental.</p>
       </div>
     </div>
   </section>
 
-  <!-- IMPACTO -->
-  <section class="stats-section" id="impacto">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <h3>15,4M</h3>
-          <p>Hectares cultivados</p>
-        </div>
+  <!-- Estatísticas -->
+  <section class="stats" id="estatisticas">
+    <div class="container stats-grid">
+      <div class="stat">
+        <h3>15,4M</h3>
+        <p>Hectares cultivados</p>
+      </div>
 
-        <div class="stat-card">
-          <h3>400 mil+</h3>
-          <p>Agricultores</p>
-        </div>
+      <div class="stat">
+        <h3>400 mil+</h3>
+        <p>Agricultores</p>
+      </div>
 
-        <div class="stat-card">
-          <h3>35%</h3>
-          <p>Área preservada</p>
-        </div>
+      <div class="stat">
+        <h3>35%</h3>
+        <p>Área preservada</p>
+      </div>
 
-        <div class="stat-card">
-          <h3>1º</h3>
-          <p>Exportador de frango</p>
-        </div>
+      <div class="stat">
+        <h3>1º</h3>
+        <p>Exportador de frango</p>
       </div>
     </div>
   </section>
 
-  <!-- TECNOLOGIA -->
-  <section class="section dark-section" id="tecnologia">
-    <div class="container tech-grid">
-      <div class="tech-text">
-        <span class="section-tag">Inovação no Campo</span>
-        <h2>Agricultura de Precisão</h2>
-        <p>
-          Drones, sensores e inteligência artificial estão transformando o
-          agronegócio, reduzindo desperdícios e aumentando a produtividade.
-        </p>
-
-        <ul>
-          <li>✓ Monitoramento em tempo real</li>
-          <li>✓ Redução no uso de água</li>
-          <li>✓ Menor uso de agroquímicos</li>
-          <li>✓ Maior eficiência operacional</li>
-        </ul>
-      </div>
-
-      <div class="tech-image">
-        <img
-          src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1400&q=80"
-          alt="Drone agrícola"
-        >
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
+  <!-- Contato -->
   <section class="section" id="contato">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Entre em Contato</span>
-        <h2>Vamos construir um futuro sustentável</h2>
-        <p>
-          Fale conosco para saber mais sobre agricultura sustentável e inovação no campo.
-        </p>
-      </div>
-
-      <div class="contact-box">
-        <p>📍 Curitiba - Paraná - Brasil</p>
-        <p>📧 contato@agrosustentavel.com.br</p>
-        <p>📞 (41) 99999-9999</p>
-      </div>
+    <div class="container section-header">
+      <span class="section-tag">Contato</span>
+      <h2>Vamos Conversar</h2>
+      <p>
+        Entre em contato para saber mais sobre agricultura sustentável.
+      </p>
+      <a href="mailto:contato@agrosustentavel.com.br" class="btn primary">
+        contato@agrosustentavel.com.br
+      </a>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Rodapé -->
   <footer class="footer">
-    <p>© 2026 AgroSustentável. Todos os direitos reservados.</p>
+    <p>© 2026 AgroSustentável — Agro Forte, Futuro Sustentável.</p>
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
