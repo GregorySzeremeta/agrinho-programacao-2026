@@ -3,212 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgroMarket | Do Campo para Sua Mesa</title>
-
+  <title>AgroMarket | Produtos do Campo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Barra superior -->
-  <div class="top-bar">
-    <div class="container top-content">
-      <span>🌱 Produtos frescos direto do produtor rural</span>
+<header class="header">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">🌱 AgroMarket</a>
 
-      <div class="accessibility">
-        <button id="increaseFont">A+</button>
-        <button id="decreaseFont">A-</button>
-        <button id="toggleTheme">🌙</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <img
+    src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2200&q=80"
+    alt="Plantação"
+    class="hero-bg"
+  >
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <span class="badge">🌎 Do produtor rural para sua casa</span>
+    <h1>O maior mercado <span>do campo</span></h1>
+    <p>
+      Frutas, verduras, mel, queijos e produtos frescos com qualidade e sustentabilidade.
+    </p>
+    <div class="hero-buttons">
+      <a href="#produtos" class="btn btn-primary">Comprar Agora</a>
+      <a href="sobre.html" class="btn btn-secondary">Conheça o Projeto</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="produtos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Loja Virtual</span>
+      <h2>Produtos em Destaque</h2>
+      <p>Seleção especial de produtos frescos do campo.</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80" alt="Maçãs">
+        <div class="product-info">
+          <h3>Maçã Orgânica</h3>
+          <p>R$ 12,90/kg</p>
+          <button class="btn btn-primary">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="Queijo">
+        <div class="product-info">
+          <h3>Queijo Colonial</h3>
+          <p>R$ 29,90</p>
+          <button class="btn btn-primary">Comprar</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=800&q=80" alt="Mel">
+        <div class="product-info">
+          <h3>Mel Puro</h3>
+          <p>R$ 24,90</p>
+          <button class="btn btn-primary">Comprar</button>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container navbar">
-      <a href="#" class="logo">🌿 AgroMarket</a>
-
-      <nav class="nav" id="nav">
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#beneficios">Benefícios</a>
-        <a href="#contato">Contato</a>
-      </nav>
-
-      <button class="menu-toggle" id="menuToggle">☰</button>
+<section class="section light">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Vantagens</span>
+      <h2>Por que comprar no AgroMarket?</h2>
     </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero" id="inicio">
-    <img
-      src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2200&q=80"
-      class="hero-bg"
-      alt="Campo"
-    >
-    <div class="hero-overlay"></div>
-
-    <div class="container hero-content">
-      <span class="badge">🌎 Agro Forte, Futuro Sustentável</span>
-
-      <h1>
-        Do Campo<br>
-        <span>Para Sua Mesa</span>
-      </h1>
-
-      <p>
-        Uma experiência digital moderna para valorizar o agronegócio,
-        a sustentabilidade e os produtores rurais do Brasil.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#produtos" class="btn btn-primary">Comprar Agora</a>
-        <a href="#sobre" class="btn btn-secondary">Conheça o Projeto</a>
+    <div class="features-grid">
+      <div class="card">
+        <h3>🚚 Entrega Rápida</h3>
+        <p>Receba em casa com agilidade.</p>
+      </div>
+         </div>
+      <div class="card">
+        <h3>🌱 Produtos Frescos</h3>
+        <p>Selecionados diretamente do produtor.</p>
+      </div>
+      <div class="card">
+        <h3>🤝 Apoio ao Campo</h3>
+        <p>Valorização da agricultura familiar.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Sobre -->
-  <section class="section" id="sobre">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Sobre o Projeto</span>
-        <h2>O agro move o Brasil</h2>
-        <p>
-          O AgroMarket conecta consumidores aos produtores rurais,
-          incentivando o consumo consciente e valorizando a produção sustentável.
-        </p>
-      </div>
+<footer class="footer">
+  <p>© 2026 AgroMarket — Todos os direitos reservados.</p>
+</footer>
 
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">🚜</div>
-          <h3>Produção</h3>
-          <p>Alta produtividade com tecnologia e eficiência.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🌱</div>
-          <h3>Sustentabilidade</h3>
-          <p>Preservação do solo, da água e da biodiversidade.</p>
-        </div>
- <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Conexão</h3>
-          <p>Aproxima o campo da cidade com transparência.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Produtos -->
-  <section class="section products" id="produtos">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Loja Virtual</span>
-        <h2>Produtos do Campo</h2>
-        <p>Selecionados com qualidade e frescor.</p>
-      </div>
-
-      <div class="grid grid-3">
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80" alt="Maçãs">
-          <div class="product-info">
-            <h3>Maçãs Orgânicas</h3>
-            <p>Colhidas diretamente do pomar.</p>
-            <div class="price">R$ 12,90/kg</div>
-            <a href="#" class="btn btn-primary">Comprar</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="Mel">
-          <div class="product-info">
-            <h3>Mel Puro</h3>
-            <p>100% natural e artesanal.</p>
-            <div class="price">R$ 24,90</div>
-            <a href="#" class="btn btn-primary">Comprar</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=800&q=80" alt="Tomates">
-          <div class="product-info">
-            <h3>Tomates Frescos</h3>
-            <p>Direto da horta para sua casa.</p>
-            <div class="price">R$ 8,90/kg</div>
-            <a href="#" class="btn btn-primary">Comprar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefícios -->
-  <section class="section" id="beneficios">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Por que escolher?</span>
-        <h2>Mais qualidade e sustentabilidade</h2>
-      </div>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">🚚</div>
-          <h3>Entrega Rápida</h3>
-          <p>Receba em casa com praticidade.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🌎</div>
-          <h3>Consumo Consciente</h3>
-          <p>Valorização do produtor e do meio ambiente.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">⭐</div>
-          <h3>Qualidade Premium</h3>
-          <p>Produtos frescos e selecionados.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section cta">
-    <div class="container">
-      <h2>Transformando o futuro do agro</h2>
-      <p>
-        Tecnologia, sustentabilidade e inovação conectando o campo e a cidade.
-      </p>
-      <a href="#contato" class="btn btn-primary">Entre em Contato</a>
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <section class="section" id="contato">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Contato</span>
-        <h2>Fale Conosco</h2>
-        <p>
-          📍 Curitiba - Paraná - Brasil<br>
-          📧 contato@agromarket.com.br<br>
-          📞 (41) 99999-9999
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2026 AgroMarket — Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
