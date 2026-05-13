@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroSustentável | Agro Forte, Futuro Sustentável</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroMarket | Do Campo para Sua Mesa</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Barra de acessibilidade -->
+  <!-- Barra superior -->
   <div class="top-bar">
-    <span>🌱 Agro Forte, Futuro Sustentável</span>
-    <div class="accessibility-controls">
-      <button onclick="increaseFont()">A+</button>
-      <button onclick="decreaseFont()">A-</button>
-      <button onclick="toggleContrast()">◐ Contraste</button>
+    <div class="container top-content">
+      <span>🌱 Produtos frescos direto do produtor rural</span>
+
+      <div class="accessibility">
+        <button id="increaseFont">A+</button>
+        <button id="decreaseFont">A-</button>
+        <button id="toggleTheme">🌙</button>
+      </div>
     </div>
   </div>
 
-  <!-- Cabeçalho -->
+  <!-- Header -->
   <header class="header">
-    <div class="container nav-container">
-      <div class="logo">🌱 AgroSustentável</div>
+    <div class="container navbar">
+      <a href="#" class="logo">🌿 AgroMarket</a>
 
-      <nav class="nav-menu" id="navMenu">
+      <nav class="nav" id="nav">
         <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre o Projeto</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Produtos</a>
         <a href="#beneficios">Benefícios</a>
-        <a href="#estatisticas">Estatísticas</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="inicio">
     <img
-      src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80"
-      alt="Campo agrícola"
+      src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2200&q=80"
       class="hero-bg"
-    />
-
+      alt="Campo"
+    >
     <div class="hero-overlay"></div>
 
-    <div class="hero-content">
-
-      <span class="badge">📍 Paraná • Brasil</span>
+    <div class="container hero-content">
+      <span class="badge">🌎 Agro Forte, Futuro Sustentável</span>
 
       <h1>
-        Agro Forte,<br>
-        <span>Futuro Sustentável</span>
+        Do Campo<br>
+        <span>Para Sua Mesa</span>
       </h1>
 
       <p>
-        Tecnologia, inovação e responsabilidade ambiental trabalhando juntas
-        para transformar o campo e construir um futuro melhor.
+        Uma experiência digital moderna para valorizar o agronegócio,
+        a sustentabilidade e os produtores rurais do Brasil.
       </p>
 
       <div class="hero-buttons">
-        <a href="#sobre" class="btn primary">Conheça o Projeto</a>
-        <a href="#contato" class="btn secondary">Entre em Contato</a>
+        <a href="#produtos" class="btn btn-primary">Comprar Agora</a>
+        <a href="#sobre" class="btn btn-secondary">Conheça o Projeto</a>
       </div>
     </div>
   </section>
@@ -76,83 +77,138 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Sobre o Projeto</span>
-        <h2>Produzir Mais, Preservando o Meio Ambiente</h2>
+        <h2>O agro move o Brasil</h2>
         <p>
-          O AgroSustentável mostra como o agronegócio pode unir alta produtividade,
-          preservação dos recursos naturais e desenvolvimento social.
+          O AgroMarket conecta consumidores aos produtores rurais,
+          incentivando o consumo consciente e valorizando a produção sustentável.
         </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">🚜</div>
+          <h3>Produção</h3>
+          <p>Alta produtividade com tecnologia e eficiência.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🌱</div>
+          <h3>Sustentabilidade</h3>
+          <p>Preservação do solo, da água e da biodiversidade.</p>
+        </div>
+ <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Conexão</h3>
+          <p>Aproxima o campo da cidade com transparência.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section class="section products" id="produtos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Loja Virtual</span>
+        <h2>Produtos do Campo</h2>
+        <p>Selecionados com qualidade e frescor.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80" alt="Maçãs">
+          <div class="product-info">
+            <h3>Maçãs Orgânicas</h3>
+            <p>Colhidas diretamente do pomar.</p>
+            <div class="price">R$ 12,90/kg</div>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="Mel">
+          <div class="product-info">
+            <h3>Mel Puro</h3>
+            <p>100% natural e artesanal.</p>
+            <div class="price">R$ 24,90</div>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=800&q=80" alt="Tomates">
+          <div class="product-info">
+            <h3>Tomates Frescos</h3>
+            <p>Direto da horta para sua casa.</p>
+            <div class="price">R$ 8,90/kg</div>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Benefícios -->
-  <section class="section alt" id="beneficios">
-    <div class="container cards">
-      <div class="card">
-        <div class="icon">🌱</div>
-        <h3>Sustentabilidade</h3>
-        <p>Preservação do solo, da água e da biodiversidade.</p>
+  <section class="section" id="beneficios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Por que escolher?</span>
+        <h2>Mais qualidade e sustentabilidade</h2>
       </div>
 
-      <div class="card">
-        <div class="icon">🚜</div>
-        <h3>Tecnologia</h3>
-        <p>Drones, sensores e inteligência artificial no campo.</p>
-      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">🚚</div>
+          <h3>Entrega Rápida</h3>
+          <p>Receba em casa com praticidade.</p>
+        </div>
 
-      <div class="card">
-        <div class="icon">📈</div>
-        <h3>Produtividade</h3>
-        <p>Maior rendimento com menor impacto ambiental.</p>
+        <div class="card">
+          <div class="card-icon">🌎</div>
+          <h3>Consumo Consciente</h3>
+          <p>Valorização do produtor e do meio ambiente.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⭐</div>
+          <h3>Qualidade Premium</h3>
+          <p>Produtos frescos e selecionados.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Estatísticas -->
-  <section class="stats" id="estatisticas">
-    <div class="container stats-grid">
-      <div class="stat">
-        <h3>15,4M</h3>
-        <p>Hectares cultivados</p>
-      </div>
-
-      <div class="stat">
-        <h3>400 mil+</h3>
-        <p>Agricultores</p>
-      </div>
-
-      <div class="stat">
-        <h3>35%</h3>
-        <p>Área preservada</p>
-      </div>
-
-      <div class="stat">
-        <h3>1º</h3>
-        <p>Exportador de frango</p>
-      </div>
+  <!-- CTA -->
+  <section class="section cta">
+    <div class="container">
+      <h2>Transformando o futuro do agro</h2>
+      <p>
+        Tecnologia, sustentabilidade e inovação conectando o campo e a cidade.
+      </p>
+      <a href="#contato" class="btn btn-primary">Entre em Contato</a>
     </div>
   </section>
 
   <!-- Contato -->
   <section class="section" id="contato">
-    <div class="container section-header">
-      <span class="section-tag">Contato</span>
-      <h2>Vamos Conversar</h2>
-      <p>
-        Entre em contato para saber mais sobre agricultura sustentável.
-      </p>
-      <a href="mailto:contato@agrosustentavel.com.br" class="btn primary">
-        contato@agrosustentavel.com.br
-      </a>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contato</span>
+        <h2>Fale Conosco</h2>
+        <p>
+          📍 Curitiba - Paraná - Brasil<br>
+          📧 contato@agromarket.com.br<br>
+          📞 (41) 99999-9999
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Rodapé -->
+  <!-- Footer -->
   <footer class="footer">
-    <p>© 2026 AgroSustentável — Agro Forte, Futuro Sustentável.</p>
+    <p>© 2026 AgroMarket — Todos os direitos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>

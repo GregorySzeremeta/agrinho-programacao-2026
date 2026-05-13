@@ -1,15 +1,53 @@
-function toggleMenu() {
-  document.getElementById('navMenu').classList.toggle('active');
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+
+if (menuToggle && nav) {
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
 }
 
-function increaseFont() {
-  document.body.style.fontSize = '18px';
+// ACESSIBILIDADE - TAMANHO DA FONTE
+let fontSize = 100;
+
+const increaseFont = document.getElementById('increaseFont');
+const decreaseFont = document.getElementById('decreaseFont');
+
+if (increaseFont) {
+  increaseFont.addEventListener('click', () => {
+    fontSize += 10;
+    document.body.style.fontSize = fontSize + '%';
+  });
 }
 
-function decreaseFont() {
-  document.body.style.fontSize = '16px';
+if (decreaseFont) {
+  decreaseFont.addEventListener('click', () => {
+    fontSize = Math.max(80, fontSize - 10);
+    document.body.style.fontSize = fontSize + '%';
+  });
+}
 }
 
-function toggleContrast() {
-  document.body.classList.toggle('high-contrast');
-}d
+// MODO ESCURO
+const toggleTheme = document.getElementById('toggleTheme');
+
+if (toggleTheme) {
+  toggleTheme.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+      toggleTheme.textContent = '☀️';
+    } else {
+      toggleTheme.textContent = '🌙';
+    }
+  });
+}
+
+// SCROLL SUAVE FECHANDO MENU
+const navLinks = document.querySelectorAll('.nav a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+  });
+});
