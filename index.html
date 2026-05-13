@@ -1,166 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AgroSustentável | Agro Forte, Futuro Sustentável</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-  <head>
-    <link rel="stylesheet" href="style.css">
-</head>
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">🌱 AgroSustentável</div>
+  <!-- Barra superior -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <span>🌎 Paraná • Brasil</span>
+      <span>🌱 Agro forte, futuro sustentável.</span>
+    </div>
+  </div>
 
-    <nav class="menu">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#pilares">Pilares</a></li>
-        <li><a href="#estatisticas">Estatísticas</a></li>
-        <li><a href="#tecnologia">Tecnologia</a></li>
-      </ul>
-    </nav>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">🌱 AgroSustentável</a>
 
-    <a href="#pilares" class="nav-btn">Explorar</a>
+      <nav class="menu">
+        <a href="#">Início</a>
+        <a href="#">Conheça o Projeto</a>
+        <a href="#">Sustentabilidade</a>
+        <a href="#">Paraná</a>
+        <a href="#">Contato</a>
+      </nav>
+
+      <a href="#" class="btn-nav">Explorar</a>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
+  <!-- Hero -->
+  <section class="hero">
     <img
-      src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80"
-      alt="Plantação"
+      src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2000&q=80"
+      alt="Campo agrícola"
       class="hero-bg"
-    />
+    >
 
-    <div class="hero-overlay"></div>
+    <div class="overlay"></div>
 
-    <div class="hero-content">
-      <span class="badge">🌎 Paraná • Brasil</span>
+    <div class="container hero-content">
+      <span class="badge">🌿 Agro Forte, Futuro Sustentável</span>
 
       <h1>
-        Agro Forte,<br />
-        <span>Futuro Sustentável</span>
+        O futuro da agricultura
+        <span>começa no campo.</span>
       </h1>
 
       <p>
-        O equilíbrio perfeito entre produtividade, inovação e preservação ambiental.
+        Tecnologia, inovação e sustentabilidade trabalhando juntas para alimentar
+        o mundo e preservar o meio ambiente.
       </p>
 
       <div class="hero-buttons">
-        <a href="#pilares" class="btn btn-primary">Conhecer Projeto</a>
-        <a href="#estatisticas" class="btn btn-secondary">Ver Dados</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PILARES -->
-  <section class="section" id="pilares">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Nossos Fundamentos</span>
-        <h2>Os 3 Pilares do Agro Sustentável</h2>
-        <p>
-          Uma agricultura moderna precisa unir alta produtividade,
-          preservação ambiental e compromisso com a sociedade.
-        </p>
+        <a href="#" class="btn btn-primary">Conheça o Projeto</a>
+        <a href="#" class="btn btn-secondary">Ver Estatísticas</a>
       </div>
 
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">📈</div>
-          <h3>Produtividade</h3>
-          <p>
-            Tecnologia e gestão para produzir mais com eficiência e qualidade.
-          </p>
+      <div class="hero-cards">
+        <div class="info-card">
+          <h3>15,4M</h3>
+          <p>Hectares cultivados</p>
         </div>
 
-        <div class="card">
-          <div class="card-icon">🌱</div>
-          <h3>Sustentabilidade</h3>
-          <p>
-            Conservação do solo, da água e da biodiversidade.
-          </p>
+        <div class="info-card">
+          <h3>400 mil+</h3>
+          <p>Agricultores</p>
         </div>
 
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Responsabilidade</h3>
-          <p>
-            Desenvolvimento econômico e social para as futuras gerações.
-          </p>
+        <div class="info-card">
+          <h3>35%</h3>
+          <p>Área preservada</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ESTATÍSTICAS -->
-  <section class="stats" id="estatisticas">
-    <div class="container stats-grid">
-      <div class="stat">
-        <h3>15,4M</h3>
-        <p>Hectares Cultivados</p>
-      </div>
-
-      <div class="stat">
-        <h3>400 mil+</h3>
-        <p>Agricultores</p>
-      </div>
-
-      <div class="stat">
-        <h3>35%</h3>
-        <p>Área Preservada</p>
-      </div>
-
-      <div class="stat">
-        <h3>1º</h3>
-        <p>Exportador de Frango</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECNOLOGIA -->
-  <section class="section dark-section" id="tecnologia">
-    <div class="container tech-grid">
-      <div class="tech-text">
-        <span class="section-tag">Inovação</span>
-        <h2>Agricultura de Precisão</h2>
-        <p>
-          Drones, sensores, inteligência artificial e energia renovável
-          estão revolucionando o campo.
-        </p>
-
-        <ul>
-          <li>✓ Monitoramento em tempo real</li>
-          <li>✓ Redução do uso de água</li>
-          <li>✓ Menor impacto ambiental</li>
-          <li>✓ Maior produtividade</li>
-        </ul>
-      </div>
-
-      <div class="tech-image">
-        <img
-          src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1200&q=80"
-          alt="Drone agrícola"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 AgroSustentável — Agro Forte, Futuro Sustentável.</p>
-  </footer>
 
 </body>
 </html>
