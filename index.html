@@ -1,120 +1,193 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgroMarket | Produtos do Campo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AgroMarket</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <header class="header">
-  <div class="container nav-container">
-    <a href="index.html" class="logo">🌱 AgroMarket</a>
+<div class="container nav-container">
 
-    <nav class="nav" id="nav">
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="#produtos">Produtos</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+<a class="logo">🌱 AgroMarket</a>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
-  </div>
+<nav id="nav" class="nav">
+<a href="#">Início</a>
+<a href="#produtos">Produtos</a>
+<a href="sobre.html">Sobre</a>
+<a href="contato.html">Contato</a>
+</nav>
+
+<div class="actions">
+
+<button id="contrastBtn" aria-label="Alto contraste">
+🌓
+</button>
+
+<button id="cartBtn" class="cart-btn">
+🛒
+<span id="cartCount">0</span>
+</button>
+
+<button id="menuToggle" class="menu-toggle">
+☰
+</button>
+
+</div>
+
+</div>
 </header>
 
 <section class="hero">
-  <img
-    src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2200&q=80"
-    alt="Plantação"
-    class="hero-bg"
-  >
-  <div class="hero-overlay"></div>
 
-  <div class="container hero-content">
-    <span class="badge">🌎 Do produtor rural para sua casa</span>
-    <h1>O maior mercado <span>do campo</span></h1>
-    <p>
-      Frutas, verduras, mel, queijos e produtos frescos com qualidade e sustentabilidade.
-    </p>
-    <div class="hero-buttons">
-      <a href="#produtos" class="btn btn-primary">Comprar Agora</a>
-      <a href="sobre.html" class="btn btn-secondary">Conheça o Projeto</a>
-    </div>
-  </div>
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<span class="badge">
+🌎 Produtos frescos direto do produtor
+</span>
+
+<h1>
+Do Campo para sua Mesa
+</h1>
+
+<p>
+Produtos frescos, orgânicos e sustentáveis.
+</p>
+
+<a href="#produtos" class="btn">
+Comprar Agora
+</a>
+
+</div>
+
 </section>
 
-<section class="section" id="produtos">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Loja Virtual</span>
-      <h2>Produtos em Destaque</h2>
-      <p>Seleção especial de produtos frescos do campo.</p>
-    </div>
+<section id="produtos" class="section">
 
-    <div class="products-grid">
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80" alt="Maçãs">
-        <div class="product-info">
-          <h3>Maçã Orgânica</h3>
-          <p>R$ 12,90/kg</p>
-          <button class="btn btn-primary">Comprar</button>
-        </div>
-      </div>
+<div class="container">
 
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="Queijo">
-        <div class="product-info">
-          <h3>Queijo Colonial</h3>
-          <p>R$ 29,90</p>
-          <button class="btn btn-primary">Comprar</button>
-        </div>
-      </div>
+<h2>Produtos em Destaque</h2>
 
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=800&q=80" alt="Mel">
-        <div class="product-info">
-          <h3>Mel Puro</h3>
-          <p>R$ 24,90</p>
-          <button class="btn btn-primary">Comprar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="products-grid">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce" alt="Maçã">
+<h3>Maçã Orgânica</h3>
+<p>R$ 12,90</p>
+<button onclick="addToCart('Maçã Orgânica',12.90)">
+Adicionar
+</button>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38" alt="Queijo">
+<h3>Queijo Colonial</h3>
+<p>R$ 29,90</p>
+<button onclick="addToCart('Queijo Colonial',29.90)">
+Adicionar
+</button>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924" alt="Mel">
+<h3>Mel Puro</h3>
+<p>R$ 24,90</p>
+<button onclick="addToCart('Mel Puro',24.90)">
+Adicionar
+</button>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section light">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Vantagens</span>
-      <h2>Por que comprar no AgroMarket?</h2>
-    </div>
+<section class="section advantages">
 
-    <div class="features-grid">
-      <div class="card">
-        <h3>🚚 Entrega Rápida</h3>
-        <p>Receba em casa com agilidade.</p>
-      </div>
-         </div>
-      <div class="card">
-        <h3>🌱 Produtos Frescos</h3>
-        <p>Selecionados diretamente do produtor.</p>
-      </div>
-      <div class="card">
-        <h3>🤝 Apoio ao Campo</h3>
-        <p>Valorização da agricultura familiar.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+
+<h2>Por que escolher o AgroMarket?</h2>
+
+<div class="features-grid">
+
+<div class="card">
+🚚
+<h3>Entrega Rápida</h3>
+<p>Receba em casa.</p>
+</div>
+
+<div class="card">
+🌱
+<h3>Produtos Frescos</h3>
+<p>Direto do produtor.</p>
+</div>
+
+<div class="card">
+🤝
+<h3>Agricultura Familiar</h3>
+<p>Apoiando pequenos produtores.</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<footer class="footer">
-  <p>© 2026 AgroMarket — Todos os direitos reservados.</p>
+<div id="cartSidebar" class="cart-sidebar">
+
+<h2>Seu Carrinho</h2>
+
+<ul id="cartItems"></ul>
+
+<h3 id="cartTotal">
+Total: R$ 0,00
+</h3>
+
+<select id="paymentMethod">
+
+<option>PIX</option>
+<option>Cartão de Crédito</option>
+<option>Cartão de Débito</option>
+<option>Dinheiro</option>
+
+</select>
+
+<button class="checkout-btn">
+Finalizar Compra
+</button>
+
+</div>
+
+<footer>
+© 2026 AgroMarket
 </footer>
 
 <script src="script.js"></script>
+
+<div vw class="enabled">
+<div vw-access-button class="active"></div>
+<div vw-plugin-wrapper>
+<div class="vw-plugin-top-wrapper"></div>
+</div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script>
+new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
 </body>
 </html>
