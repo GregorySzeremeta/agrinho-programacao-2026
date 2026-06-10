@@ -1,68 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AgroForte Market</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>Verdeva Market</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="home">
 
-<!-- HEADER FIXO -->
-<header class="header">
-  <div class="logo">🌱 AgroForte</div>
-
-  <input type="text" id="search" placeholder="Buscar frutas, grãos, produtores..." />
-
-  <div class="user-area">
-    <button>Entrar</button>
-    <button class="cart-btn">🛒 <span id="cart-count">0</span></button>
-  </div>
+<header class="topbar">
+  <h1>🌿 VERDEVA MARKET</h1>
+  <p>Do campo para uma vida mais equilibrada</p>
 </header>
 
-<!-- CATEGORIAS -->
-<section class="categories">
-  <button onclick="filtrarCategoria('todos')">Todos</button>
-  <button onclick="filtrarCategoria('frutas')">Frutas</button>
-  <button onclick="filtrarCategoria('verduras')">Verduras</button>
-  <button onclick="filtrarCategoria('graos')">Grãos</button>
-  <button onclick="filtrarCategoria('organicos')">Orgânicos</button>
+<section class="hero">
+  <h2>Sustentabilidade que alimenta o futuro</h2>
+  <p>Conectando produtores rurais e consumidores conscientes</p>
+
+  <a href="loja.html" class="btn">Entrar na Loja</a>
 </section>
-
-<!-- BANNER -->
-<section class="banner">
-  <div>
-    <h1>Do campo direto para você 🌾</h1>
-    <p>Sustentabilidade, produção local e qualidade natural</p>
-  </div>
-</section>
-
-<!-- CONTEÚDO -->
-<main class="container">
-
-  <h2>Destaques do dia 🔥</h2>
-
-  <div id="products" class="grid"></div>
-
-</main>
-
-<!-- CARRINHO LATERAL -->
-<aside class="cart" id="cart">
-  <h2>Seu carrinho</h2>
-
-  <div id="cart-items"></div>
-
-  <div class="cart-footer">
-    <p id="total">Total: R$ 0,00</p>
-    <button onclick="finalizar()">Finalizar compra</button>
-  </div>
-</aside>
 
 <footer>
-  <p>AgroForte Market © 2026 — Produção sustentável e equilíbrio com a natureza 🌎</p>
+  <p>© 2026 Verdeva Market</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
