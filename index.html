@@ -4,530 +4,319 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AgroMarket Premium</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>AgroMarket • Marketplace Premium</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- HEADER -->
-
+<!-- ================= HEADER ================= -->
 <header class="header">
+<div class="container header-inner">
 
-<div class="container nav-container">
+<div class="logo">🌱 AgroMarket</div>
 
-<div class="logo">
-🌱 AgroMarket
-</div>
-
-<nav class="nav" id="nav">
-
-<a href="#inicio">Início</a>
-<a href="#categorias">Categorias</a>
-<a href="#produtos">Produtos</a>
-<a href="#sobre">Sobre</a>
-<a href="#contato">Contato</a>
-
-</nav>
+<input id="searchInput" placeholder="Buscar produtos...">
 
 <div class="header-actions">
-
-<button id="darkModeBtn">
-🌙
-</button>
-
-<button id="cartBtn" class="cart-btn">
-
-🛒
-
-<span id="cartCount">
-0
-</span>
-
-</button>
-
-<button id="menuToggle" class="menu-toggle">
-☰
-</button>
-
+<button id="loginBtn">Login</button>
+<button id="themeBtn">🌙</button>
+<button id="cartBtn">🛒 <span id="cartCount">0</span></button>
 </div>
 
 </div>
-
 </header>
 
-<!-- HERO -->
-
-<section id="inicio" class="hero">
-
-<div class="hero-overlay"></div>
-
+<!-- ================= HERO ================= -->
+<section class="hero">
 <div class="hero-content">
-
-<span class="hero-tag">
-🌎 Agricultura Familiar
-</span>
-
-<h1>
-Do Campo Para Sua Mesa
-</h1>
-
-<p>
-Produtos frescos, orgânicos e sustentáveis entregues diretamente pelos produtores.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#produtos" class="btn btn-primary">
-Comprar Agora
-</a>
-
-<a href="#sobre" class="btn btn-outline">
-Conheça o Projeto
-</a>
-
+<h1>Do Campo para sua Mesa</h1>
+<p>Marketplace moderno com produtores locais e produtos frescos</p>
+<a class="btn" href="#produtos">Explorar produtos</a>
 </div>
-
-</div>
-
 </section>
 
-<!-- BUSCA -->
+<!-- ================= BANNER PROMO ================= -->
+<section class="promo">
+<div class="container">
+<div class="promo-box">
+<h2>🔥 Promoções da semana</h2>
+<p>Até 40% OFF em frutas selecionadas</p>
+</div>
+</div>
+</section>
 
-<section class="search-section">
-
+<!-- ================= CATEGORIAS ================= -->
+<section class="section">
 <div class="container">
 
-<input
-type="text"
-id="searchInput"
-placeholder="Buscar produtos..."
-class="search-box"
->
+<h2>Categorias</h2>
+
+<div class="grid-categories">
+
+<div class="cat">🍎 Frutas</div>
+<div class="cat">🥬 Verduras</div>
+<div class="cat">🧀 Laticínios</div>
+<div class="cat">🍯 Mel</div>
+<div class="cat">☕ Café</div>
+<div class="cat">🌾 Grãos</div>
+<div class="cat">🍗 Proteínas</div>
+<div class="cat">🥖 Padaria</div>
 
 </div>
 
+</div>
 </section>
 
-<!-- CATEGORIAS -->
-
-<section id="categorias" class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Categorias
-</h2>
-
-<p>
-Escolha seus produtos favoritos
-</p>
-
-</div>
-
-<div class="categories-grid">
-
-<div class="category-card">
-🍎
-<h3>Frutas</h3>
-</div>
-
-<div class="category-card">
-🥬
-<h3>Verduras</h3>
-</div>
-
-<div class="category-card">
-🧀
-<h3>Laticínios</h3>
-</div>
-
-<div class="category-card">
-🍯
-<h3>Apicultura</h3>
-</div>
-
-<div class="category-card">
-☕
-<h3>Cafés</h3>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PRODUTOS -->
-
+<!-- ================= PRODUTOS ================= -->
 <section id="produtos" class="section light">
-
 <div class="container">
 
-<div class="section-title">
+<h2>Produtos em destaque</h2>
 
-<h2>
-Produtos em Destaque
-</h2>
-
-<p>
-20 produtos selecionados
-</p>
-
-</div>
-
-<div class="products-grid" id="productsGrid">
+<div class="grid-products">
 
 <!-- 1 -->
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80">
+<div class="product">
+<img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
 <h3>Maçã Orgânica</h3>
 <p>R$ 12,90</p>
-<button onclick="addToCart('Maçã Orgânica',12.90)">
-Adicionar
-</button>
+<button onclick="add('Maçã',12.9)">Adicionar</button>
 </div>
 
 <!-- 2 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e37f">
 <h3>Banana Prata</h3>
 <p>R$ 8,90</p>
-<button onclick="addToCart('Banana Prata',8.90)">
-Adicionar
-</button>
+<button onclick="add('Banana',8.9)">Adicionar</button>
 </div>
 
 <!-- 3 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b">
 <h3>Laranja</h3>
 <p>R$ 7,50</p>
-<button onclick="addToCart('Laranja',7.50)">
-Adicionar
-</button>
+<button onclick="add('Laranja',7.5)">Adicionar</button>
 </div>
 
 <!-- 4 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6">
 <h3>Morango</h3>
 <p>R$ 16,90</p>
-<button onclick="addToCart('Morango',16.90)">
-Adicionar
-</button>
+<button onclick="add('Morango',16.9)">Adicionar</button>
 </div>
 
 <!-- 5 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1587735243615-c03f25aaff15">
 <h3>Abacaxi</h3>
 <p>R$ 10,90</p>
-<button onclick="addToCart('Abacaxi',10.90)">
-Adicionar
-</button>
+<button onclick="add('Abacaxi',10.9)">Adicionar</button>
 </div>
 
 <!-- 6 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999">
 <h3>Tomate</h3>
 <p>R$ 9,90</p>
-<button onclick="addToCart('Tomate',9.90)">
-Adicionar
-</button>
+<button onclick="add('Tomate',9.9)">Adicionar</button>
 </div>
 
 <!-- 7 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1622205313162-be1d5712a43f">
 <h3>Alface</h3>
 <p>R$ 4,50</p>
-<button onclick="addToCart('Alface',4.50)">
-Adicionar
-</button>
+<button onclick="add('Alface',4.5)">Adicionar</button>
 </div>
 
 <!-- 8 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1447175008436-054170c2e979">
 <h3>Cenoura</h3>
 <p>R$ 5,90</p>
-<button onclick="addToCart('Cenoura',5.90)">
-Adicionar
-</button>
+<button onclick="add('Cenoura',5.9)">Adicionar</button>
 </div>
 
 <!-- 9 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655">
 <h3>Batata Doce</h3>
 <p>R$ 6,90</p>
-<button onclick="addToCart('Batata Doce',6.90)">
-Adicionar
-</button>
+<button onclick="add('Batata',6.9)">Adicionar</button>
 </div>
 
 <!-- 10 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1615485925873-6a59f5fca4e4">
 <h3>Pepino</h3>
 <p>R$ 4,90</p>
-<button onclick="addToCart('Pepino',4.90)">
-Adicionar
-</button>
+<button onclick="add('Pepino',4.9)">Adicionar</button>
 </div>
 
 <!-- 11 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d">
 <h3>Queijo Colonial</h3>
 <p>R$ 29,90</p>
-<button onclick="addToCart('Queijo Colonial',29.90)">
-Adicionar
-</button>
+<button onclick="add('Queijo',29.9)">Adicionar</button>
 </div>
 
 <!-- 12 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150">
 <h3>Leite Integral</h3>
 <p>R$ 7,90</p>
-<button onclick="addToCart('Leite Integral',7.90)">
-Adicionar
-</button>
+<button onclick="add('Leite',7.9)">Adicionar</button>
 </div>
 
 <!-- 13 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b">
 <h3>Iogurte Natural</h3>
 <p>R$ 8,90</p>
-<button onclick="addToCart('Iogurte Natural',8.90)">
-Adicionar
-</button>
+<button onclick="add('Iogurte',8.9)">Adicionar</button>
 </div>
 
 <!-- 14 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924">
 <h3>Mel Puro</h3>
 <p>R$ 24,90</p>
-<button onclick="addToCart('Mel Puro',24.90)">
-Adicionar
-</button>
+<button onclick="add('Mel',24.9)">Adicionar</button>
 </div>
 
 <!-- 15 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38">
 <h3>Própolis</h3>
 <p>R$ 19,90</p>
-<button onclick="addToCart('Própolis',19.90)">
-Adicionar
-</button>
+<button onclick="add('Própolis',19.9)">Adicionar</button>
 </div>
 
 <!-- 16 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03">
 <h3>Ovos Caipira</h3>
 <p>R$ 18,90</p>
-<button onclick="addToCart('Ovos Caipira',18.90)">
-Adicionar
-</button>
+<button onclick="add('Ovos',18.9)">Adicionar</button>
 </div>
 
 <!-- 17 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
 <h3>Feijão</h3>
 <p>R$ 11,90</p>
-<button onclick="addToCart('Feijão',11.90)">
-Adicionar
-</button>
+<button onclick="add('Feijão',11.9)">Adicionar</button>
 </div>
 
 <!-- 18 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076">
 <h3>Milho Verde</h3>
 <p>R$ 9,90</p>
-<button onclick="addToCart('Milho Verde',9.90)">
-Adicionar
-</button>
+<button onclick="add('Milho',9.9)">Adicionar</button>
 </div>
 
 <!-- 19 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99">
 <h3>Arroz Colonial</h3>
 <p>R$ 21,90</p>
-<button onclick="addToCart('Arroz Colonial',21.90)">
-Adicionar
-</button>
+<button onclick="add('Arroz',21.9)">Adicionar</button>
 </div>
 
 <!-- 20 -->
-
-<div class="product-card">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
 <h3>Café Artesanal</h3>
 <p>R$ 34,90</p>
-<button onclick="addToCart('Café Artesanal',34.90)">
-Adicionar
-</button>
+<button onclick="add('Café',34.9)">Adicionar</button>
 </div>
 
 </div>
-
 </div>
-
 </section>
 
-<!-- SOBRE -->
+<!-- ================= AVALIAÇÕES ================= -->
+<section class="section">
+<div class="container">
+<h2>Avaliações dos clientes</h2>
 
-<section id="sobre" class="section">
+<div class="reviews">
+<p>⭐⭐⭐⭐⭐ “Muito bom!”</p>
+<p>⭐⭐⭐⭐⭐ “Entrega rápida”</p>
+<p>⭐⭐⭐⭐ “Excelente qualidade”</p>
+</div>
 
+</div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section light">
 <div class="container">
 
-<div class="section-title">
+<h2>FAQ</h2>
 
-<h2>Sobre o AgroMarket</h2>
-
-<p>
-Conectamos produtores rurais diretamente aos consumidores.
-Valorizamos a agricultura familiar, sustentabilidade e produtos frescos.
-</p>
+<p><strong>Entrega?</strong> Em todo o Brasil</p>
+<p><strong>Pagamento?</strong> PIX, cartão e dinheiro</p>
+<p><strong>Produtos?</strong> Direto do produtor</p>
 
 </div>
-
-</div>
-
 </section>
 
-<!-- CONTATO -->
-
-<section id="contato" class="section light">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Contato</h2>
-
-<p>
-📍 Curitiba - PR
-<br>
-📧 contato@agromarket.com.br
-<br>
-📞 (41) 99999-9999
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- NEWSLETTER -->
-
+<!-- ================= NEWSLETTER ================= -->
 <section class="newsletter">
-
 <div class="container">
-
-<h2>
-Receba Promoções
-</h2>
-
-<input
-type="email"
-placeholder="Digite seu e-mail"
->
-
-<button>
-Cadastrar
-</button>
-
+<h2>Receba ofertas</h2>
+<input placeholder="Seu e-mail">
+<button>Inscrever</button>
 </div>
-
 </section>
 
-<!-- CARRINHO -->
+<!-- ================= CARRINHO ================= -->
+<aside id="cart" class="cart">
 
-<div id="cartSidebar" class="cart-sidebar">
+<h2>Carrinho</h2>
 
-<h2>
-Seu Carrinho
-</h2>
+<ul id="cartItems"></ul>
 
-<ul id="cartItems">
-</ul>
+<input id="cupom" placeholder="Cupom">
+<input id="cep" placeholder="CEP">
 
-<h3 id="cartTotal">
-R$ 0,00
-</h3>
-
-<select id="paymentMethod">
-
+<select id="payment">
 <option>PIX</option>
-<option>Cartão Crédito</option>
-<option>Cartão Débito</option>
+<option>Cartão</option>
 <option>Dinheiro</option>
-
 </select>
 
-<button class="checkout-btn">
-Finalizar Compra
-</button>
+<h3 id="total">Total: R$ 0,00</h3>
 
+<button id="checkout">Finalizar compra</button>
+
+</aside>
+
+<!-- LOGIN -->
+<div id="login" class="modal">
+<div class="modal-box">
+<h2>Login</h2>
+<input placeholder="Email">
+<input placeholder="Senha">
+<button>Entrar</button>
+</div>
 </div>
 
-<footer class="footer">
-
-<p>
-© 2026 AgroMarket Premium
-</p>
-
-</footer>
-
-<!-- VLIBRAS -->
-
+<!-- VLibras -->
 <div vw class="enabled">
 <div vw-access-button class="active"></div>
-<div vw-plugin-wrapper>
-<div class="vw-plugin-top-wrapper"></div>
-</div>
+<div vw-plugin-wrapper></div>
 </div>
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-
 <script>
 new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>

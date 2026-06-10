@@ -1,155 +1,252 @@
+/* =========================
+   PRODUTOS BASE
+========================= */
+
+const products = [
+{ name:"Maçã Orgânica", price:12.90 },
+{ name:"Banana Prata", price:8.90 },
+{ name:"Laranja", price:7.50 },
+{ name:"Morango", price:16.90 },
+{ name:"Abacaxi", price:10.90 },
+{ name:"Tomate", price:9.90 },
+{ name:"Alface", price:4.50 },
+{ name:"Cenoura", price:5.90 },
+{ name:"Batata Doce", price:6.90 },
+{ name:"Pepino", price:4.90 },
+{ name:"Queijo Colonial", price:29.90 },
+{ name:"Leite Integral", price:7.90 },
+{ name:"Iogurte", price:8.90 },
+{ name:"Mel Puro", price:24.90 },
+{ name:"Própolis", price:19.90 },
+{ name:"Ovos Caipira", price:18.90 },
+{ name:"Feijão", price:11.90 },
+{ name:"Milho Verde", price:9.90 },
+{ name:"Arroz", price:21.90 },
+{ name:"Café Artesanal", price:34.90 }
+];
+
+/* =========================
+   ESTADO DO CARRINHO
+========================= */
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-/* ===== ELEMENTOS ===== */
-const cartBtn = document.getElementById("cartBtn");
-const cartSidebar = document.getElementById("cartSidebar");
+/* =========================
+   ELEMENTOS
+========================= */
+
+const grid = document.getElementById("grid");
+const cartBox = document.getElementById("cart");
 const cartItems = document.getElementById("cartItems");
 const cartCount = document.getElementById("cartCount");
-const cartTotal = document.getElementById("cartTotal");
-const searchInput = document.getElementById("searchInput");
-const nav = document.getElementById("nav");
-const menuToggle = document.getElementById("menuToggle");
-const darkModeBtn = document.getElementById("darkModeBtn");
+const totalEl = document.getElementById("total");
 
-/* ===== CARRINHO ABRIR/FECHAR ===== */
-if(cartBtn){
-cartBtn.addEventListener("click",()=>{
-cartSidebar.classList.toggle("open");
+/* =========================
+   RENDER PRODUTOS
+========================= */
+
+function renderProducts() {
+
+grid.innerHTML = "";
+
+products.forEach((p, i) => {
+
+grid.innerHTML += `
+<div class="product">
+<h3>${p.name}</h3>
+<p>R$ ${p.price.toFixed(2)}</p>
+<button onclick="add(${i})">Adicionar</button>
+</div>
+`;
+
 });
+
 }
 
-/* ===== ADICIONAR AO CARRINHO ===== */
-function addToCart(name, price){
+renderProducts();
 
-cart.push({name, price});
+/* =========================
+   ADICIONAR AO CARRINHO
+========================= */
+
+function add(index) {
+
+cart.push(products[index]);
 
 saveCart();
-renderCart();
+updateCart();
 
 }
 
-/* ===== REMOVER ITEM ===== */
-function removeItem(index){
+/* =========================
+   REMOVER ITEM
+========================= */
 
-cart.splice(index,1);
+function remove(index) {
+
+cart.splice(index, 1);
 
 saveCart();
-renderCart();
+updateCart();
 
 }
 
-/* ===== SALVAR LOCALSTORAGE ===== */
-function saveCart(){
-localStorage.setItem("cart", JSON.stringify(cart));
-}
+/* =========================
+   ATUALIZAR CARRINHO
+========================= */
 
-/* ===== RENDER CARRINHO ===== */
-function renderCart(){
+function updateCart() {
 
 cartItems.innerHTML = "";
 
 let total = 0;
 
-cart.forEach((item,index)=>{
+cart.forEach((item, i) => {
 
 total += item.price;
 
-const li = document.createElement("li");
-
-li.innerHTML = `
-<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
-<span>${item.name} - R$ ${item.price.toFixed(2)}</span>
-<button onclick="removeItem(${index})" style="background:red;color:white;border:none;padding:5px 8px;border-radius:6px;cursor:pointer;">
-X
-</button>
-</div>
+cartItems.innerHTML += `
+<li>
+${item.name} - R$ ${item.price.toFixed(2)}
+<button onclick="remove(${i})">❌</button>
+</li>
 `;
-
-cartItems.appendChild(li);
 
 });
 
-cartCount.textContent = cart.length;
-cartTotal.textContent = "Total: R$ " + total.toFixed(2);
+cartCount.innerText = cart.length;
+totalEl.innerText = "Total: R$ " + total.toFixed(2);
 
 }
 
-/* ===== BUSCA ===== */
-if(searchInput){
+/* =========================
+   SALVAR LOCALSTORAGE
+========================= */
 
-searchInput.addEventListener("input",(e)=>{
+function saveCart() {
+localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+/* =========================
+   ABRIR CARRINHO
+========================= */
+
+document.getElementById("cartBtn").onclick = () => {
+cartBox.classList.toggle("open");
+};
+
+/* =========================
+   DARK MODE
+========================= */
+
+document.getElementById("themeBtn").onclick = () => {
+document.body.classList.toggle("dark");
+};
+
+/* =========================
+   LOGIN MODAL
+========================= */
+
+const login = document.getElementById("login");
+
+document.getElementById("loginBtn").onclick = () => {
+login.style.display = "flex";
+};
+
+login.onclick = (e) => {
+if (e.target === login) {
+login.style.display = "none";
+}
+};
+
+/* =========================
+   BUSCA DE PRODUTOS
+========================= */
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
 
 const value = e.target.value.toLowerCase();
 
-document.querySelectorAll(".product-card").forEach(card=>{
+const filtered = products.filter(p =>
+p.name.toLowerCase().includes(value)
+);
 
-const name = card.querySelector("h3").innerText.toLowerCase();
+grid.innerHTML = "";
 
-card.style.display = name.includes(value) ? "block" : "none";
+filtered.forEach((p, i) => {
+
+grid.innerHTML += `
+<div class="product">
+<h3>${p.name}</h3>
+<p>R$ ${p.price.toFixed(2)}</p>
+<button onclick="add(${products.indexOf(p)})">Adicionar</button>
+</div>
+`;
 
 });
 
 });
+
+/* =========================
+   CUPOM DE DESCONTO
+========================= */
+
+document.getElementById("cupom").addEventListener("input", (e) => {
+
+const cupom = e.target.value.toUpperCase();
+
+if (cupom === "AGRO10") {
+
+let total = cart.reduce((a,b)=>a+b.price,0);
+total = total * 0.9;
+
+totalEl.innerText = "Total com desconto: R$ " + total.toFixed(2);
 
 }
 
-/* ===== MENU MOBILE ===== */
-if(menuToggle){
-
-menuToggle.addEventListener("click",()=>{
-
-nav.classList.toggle("active");
-
 });
+
+/* =========================
+   FRETE (SIMULAÇÃO CEP)
+========================= */
+
+document.getElementById("cep").addEventListener("blur", async (e) => {
+
+const cep = e.target.value;
+
+if (cep.length === 8) {
+
+const frete = Math.floor(Math.random() * 20) + 10;
+
+totalEl.innerText += " | Frete: R$ " + frete;
 
 }
 
-/* ===== DARK MODE ===== */
-if(darkModeBtn){
-
-darkModeBtn.addEventListener("click",()=>{
-
-document.body.classList.toggle("dark");
-
 });
 
-}
+/* =========================
+   CHECKOUT FINAL
+========================= */
 
-/* ===== CHECKOUT ===== */
-document.querySelector(".checkout-btn").addEventListener("click",()=>{
+document.getElementById("checkout").onclick = () => {
 
-if(cart.length === 0){
+if (cart.length === 0) {
 alert("Carrinho vazio!");
 return;
 }
 
-let payment = document.getElementById("paymentMethod").value;
-
-if(payment === "PIX"){
-alert("Pagamento via PIX selecionado. Chave: agromarket@pix.com");
-}
-
-if(payment === "Cartão Crédito"){
-alert("Pagamento com Cartão de Crédito selecionado.");
-}
-
-if(payment === "Cartão Débito"){
-alert("Pagamento com Cartão de Débito selecionado.");
-}
-
-if(payment === "Dinheiro"){
-alert("Pagamento em Dinheiro na entrega selecionado.");
-}
-
-alert("Compra finalizada com sucesso!");
+alert("Compra finalizada com sucesso! (simulação)");
 
 cart = [];
 saveCart();
-renderCart();
+updateCart();
 
-cartSidebar.classList.remove("open");
+cartBox.classList.remove("open");
 
-});
+};
 
-/* ===== INICIALIZAR ===== */
-renderCart();
+/* =========================
+   INICIALIZAÇÃO
+========================= */
+
+updateCart();
