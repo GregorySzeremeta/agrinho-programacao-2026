@@ -18,7 +18,7 @@
 
 <div class="logo">🌱 AgroMarket</div>
 
-<input id="searchInput" placeholder="Buscar produtos...">
+<input id="searchInput" placeholder="Buscar produtos..." aria-label="Buscar produtos">
 
 <div class="header-actions">
 <button id="loginBtn">Login</button>
@@ -38,24 +38,20 @@
 </div>
 </section>
 
-<!-- ================= BANNER PROMO ================= -->
+<!-- ================= PROMO ================= -->
 <section class="promo">
 <div class="container">
-<div class="promo-box">
 <h2>🔥 Promoções da semana</h2>
 <p>Até 40% OFF em frutas selecionadas</p>
-</div>
 </div>
 </section>
 
 <!-- ================= CATEGORIAS ================= -->
 <section class="section">
 <div class="container">
-
 <h2>Categorias</h2>
 
 <div class="grid-categories">
-
 <div class="cat">🍎 Frutas</div>
 <div class="cat">🥬 Verduras</div>
 <div class="cat">🧀 Laticínios</div>
@@ -64,7 +60,6 @@
 <div class="cat">🌾 Grãos</div>
 <div class="cat">🍗 Proteínas</div>
 <div class="cat">🥖 Padaria</div>
-
 </div>
 
 </div>
@@ -76,166 +71,28 @@
 
 <h2>Produtos em destaque</h2>
 
-<div class="grid-products">
+<div id="productGrid" class="grid-products">
 
-<!-- 1 -->
+<!-- Produto exemplo (JS pode substituir depois) -->
 <div class="product">
-<img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+<img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce" alt="Maçã">
 <h3>Maçã Orgânica</h3>
 <p>R$ 12,90</p>
-<button onclick="add('Maçã',12.9)">Adicionar</button>
+<button data-name="Maçã" data-price="12.9">Adicionar</button>
 </div>
 
-<!-- 2 -->
 <div class="product">
-<img src="https://images.unsplash.com/photo-1574226516831-e1dff420e37f">
+<img src="https://images.unsplash.com/photo-1574226516831-e1dff420e37f" alt="Banana">
 <h3>Banana Prata</h3>
 <p>R$ 8,90</p>
-<button onclick="add('Banana',8.9)">Adicionar</button>
+<button data-name="Banana" data-price="8.9">Adicionar</button>
 </div>
 
-<!-- 3 -->
 <div class="product">
-<img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b">
+<img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b" alt="Laranja">
 <h3>Laranja</h3>
 <p>R$ 7,50</p>
-<button onclick="add('Laranja',7.5)">Adicionar</button>
-</div>
-
-<!-- 4 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6">
-<h3>Morango</h3>
-<p>R$ 16,90</p>
-<button onclick="add('Morango',16.9)">Adicionar</button>
-</div>
-
-<!-- 5 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1587735243615-c03f25aaff15">
-<h3>Abacaxi</h3>
-<p>R$ 10,90</p>
-<button onclick="add('Abacaxi',10.9)">Adicionar</button>
-</div>
-
-<!-- 6 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1540420773420-3366772f4999">
-<h3>Tomate</h3>
-<p>R$ 9,90</p>
-<button onclick="add('Tomate',9.9)">Adicionar</button>
-</div>
-
-<!-- 7 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1622205313162-be1d5712a43f">
-<h3>Alface</h3>
-<p>R$ 4,50</p>
-<button onclick="add('Alface',4.5)">Adicionar</button>
-</div>
-
-<!-- 8 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1447175008436-054170c2e979">
-<h3>Cenoura</h3>
-<p>R$ 5,90</p>
-<button onclick="add('Cenoura',5.9)">Adicionar</button>
-</div>
-
-<!-- 9 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655">
-<h3>Batata Doce</h3>
-<p>R$ 6,90</p>
-<button onclick="add('Batata',6.9)">Adicionar</button>
-</div>
-
-<!-- 10 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1615485925873-6a59f5fca4e4">
-<h3>Pepino</h3>
-<p>R$ 4,90</p>
-<button onclick="add('Pepino',4.9)">Adicionar</button>
-</div>
-
-<!-- 11 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d">
-<h3>Queijo Colonial</h3>
-<p>R$ 29,90</p>
-<button onclick="add('Queijo',29.9)">Adicionar</button>
-</div>
-
-<!-- 12 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1550583724-b2692b85b150">
-<h3>Leite Integral</h3>
-<p>R$ 7,90</p>
-<button onclick="add('Leite',7.9)">Adicionar</button>
-</div>
-
-<!-- 13 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1563636619-e9143da7973b">
-<h3>Iogurte Natural</h3>
-<p>R$ 8,90</p>
-<button onclick="add('Iogurte',8.9)">Adicionar</button>
-</div>
-
-<!-- 14 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924">
-<h3>Mel Puro</h3>
-<p>R$ 24,90</p>
-<button onclick="add('Mel',24.9)">Adicionar</button>
-</div>
-
-<!-- 15 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38">
-<h3>Própolis</h3>
-<p>R$ 19,90</p>
-<button onclick="add('Própolis',19.9)">Adicionar</button>
-</div>
-
-<!-- 16 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03">
-<h3>Ovos Caipira</h3>
-<p>R$ 18,90</p>
-<button onclick="add('Ovos',18.9)">Adicionar</button>
-</div>
-
-<!-- 17 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
-<h3>Feijão</h3>
-<p>R$ 11,90</p>
-<button onclick="add('Feijão',11.9)">Adicionar</button>
-</div>
-
-<!-- 18 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076">
-<h3>Milho Verde</h3>
-<p>R$ 9,90</p>
-<button onclick="add('Milho',9.9)">Adicionar</button>
-</div>
-
-<!-- 19 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1516684732162-798a0062be99">
-<h3>Arroz Colonial</h3>
-<p>R$ 21,90</p>
-<button onclick="add('Arroz',21.9)">Adicionar</button>
-</div>
-
-<!-- 20 -->
-<div class="product">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
-<h3>Café Artesanal</h3>
-<p>R$ 34,90</p>
-<button onclick="add('Café',34.9)">Adicionar</button>
+<button data-name="Laranja" data-price="7.5">Adicionar</button>
 </div>
 
 </div>
@@ -245,12 +102,13 @@
 <!-- ================= AVALIAÇÕES ================= -->
 <section class="section">
 <div class="container">
+
 <h2>Avaliações dos clientes</h2>
 
 <div class="reviews">
-<p>⭐⭐⭐⭐⭐ “Muito bom!”</p>
-<p>⭐⭐⭐⭐⭐ “Entrega rápida”</p>
-<p>⭐⭐⭐⭐ “Excelente qualidade”</p>
+<p>⭐⭐⭐⭐⭐ Muito bom!</p>
+<p>⭐⭐⭐⭐⭐ Entrega rápida</p>
+<p>⭐⭐⭐⭐ Excelente qualidade</p>
 </div>
 
 </div>
@@ -262,9 +120,11 @@
 
 <h2>FAQ</h2>
 
-<p><strong>Entrega?</strong> Em todo o Brasil</p>
-<p><strong>Pagamento?</strong> PIX, cartão e dinheiro</p>
-<p><strong>Produtos?</strong> Direto do produtor</p>
+<div class="faq">
+<p><strong>Entrega:</strong> Todo o Brasil</p>
+<p><strong>Pagamento:</strong> PIX, cartão e dinheiro</p>
+<p><strong>Origem:</strong> Direto do produtor</p>
+</div>
 
 </div>
 </section>
@@ -273,7 +133,7 @@
 <section class="newsletter">
 <div class="container">
 <h2>Receba ofertas</h2>
-<input placeholder="Seu e-mail">
+<input type="email" placeholder="Seu e-mail">
 <button>Inscrever</button>
 </div>
 </section>
@@ -281,10 +141,14 @@
 <!-- ================= CARRINHO ================= -->
 <aside id="cart" class="cart">
 
+<div class="cart-header">
 <h2>Carrinho</h2>
+<button id="closeCart">✖</button>
+</div>
 
 <ul id="cartItems"></ul>
 
+<div class="cart-footer">
 <input id="cupom" placeholder="Cupom">
 <input id="cep" placeholder="CEP">
 
@@ -297,20 +161,21 @@
 <h3 id="total">Total: R$ 0,00</h3>
 
 <button id="checkout">Finalizar compra</button>
+</div>
 
 </aside>
 
-<!-- LOGIN -->
+<!-- ================= LOGIN ================= -->
 <div id="login" class="modal">
 <div class="modal-box">
 <h2>Login</h2>
-<input placeholder="Email">
-<input placeholder="Senha">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Senha">
 <button>Entrar</button>
 </div>
 </div>
 
-<!-- VLibras -->
+<!-- ================= VLIBRAS ================= -->
 <div vw class="enabled">
 <div vw-access-button class="active"></div>
 <div vw-plugin-wrapper></div>
