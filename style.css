@@ -84,3 +84,78 @@ nav a {
   margin: 10px 0;
   border-radius: 8px;
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6f1;
+  color: #1f2d25;
+}
+
+/* TOPBAR mais elegante */
+.topbar {
+  background: linear-gradient(90deg, #0f3d2e, #1f6f4a);
+  color: white;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+/* CARD MAIS BONITO */
+.card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGEM DO PRODUTO */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* TEXTO */
+.card h3 {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.price {
+  margin: 0 10px;
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+/* BOTÃO */
+.card button {
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #2ecc71, #1f6f4a);
+  color: white;
+  cursor: pointer;
+}
+
+/* BOTÃO GERAL */
+.btn {
+  background: #2ecc71;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+}
