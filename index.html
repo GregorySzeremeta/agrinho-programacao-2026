@@ -1,118 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgroMarket | Produtos do Campo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgroForte Market</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
 
+<!-- HEADER FIXO -->
 <header class="header">
-  <div class="container nav-container">
-    <a href="index.html" class="logo">🌱 AgroMarket</a>
+  <div class="logo">🌱 AgroForte</div>
 
-    <nav class="nav" id="nav">
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="#produtos">Produtos</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+  <input type="text" id="search" placeholder="Buscar frutas, grãos, produtores..." />
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
+  <div class="user-area">
+    <button>Entrar</button>
+    <button class="cart-btn">🛒 <span id="cart-count">0</span></button>
   </div>
 </header>
 
-<section class="hero">
-  <img
-    src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2200&q=80"
-    alt="Plantação"
-    class="hero-bg"
-  >
-  <div class="hero-overlay"></div>
+<!-- CATEGORIAS -->
+<section class="categories">
+  <button onclick="filtrarCategoria('todos')">Todos</button>
+  <button onclick="filtrarCategoria('frutas')">Frutas</button>
+  <button onclick="filtrarCategoria('verduras')">Verduras</button>
+  <button onclick="filtrarCategoria('graos')">Grãos</button>
+  <button onclick="filtrarCategoria('organicos')">Orgânicos</button>
+</section>
 
-  <div class="container hero-content">
-    <span class="badge">🌎 Do produtor rural para sua casa</span>
-    <h1>O maior mercado <span>do campo</span></h1>
-    <p>
-      Frutas, verduras, mel, queijos e produtos frescos com qualidade e sustentabilidade.
-    </p>
-    <div class="hero-buttons">
-      <a href="#produtos" class="btn btn-primary">Comprar Agora</a>
-      <a href="sobre.html" class="btn btn-secondary">Conheça o Projeto</a>
-    </div>
+<!-- BANNER -->
+<section class="banner">
+  <div>
+    <h1>Do campo direto para você 🌾</h1>
+    <p>Sustentabilidade, produção local e qualidade natural</p>
   </div>
 </section>
 
-<section class="section" id="produtos">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Loja Virtual</span>
-      <h2>Produtos em Destaque</h2>
-      <p>Seleção especial de produtos frescos do campo.</p>
-    </div>
+<!-- CONTEÚDO -->
+<main class="container">
 
-    <div class="products-grid">
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80" alt="Maçãs">
-        <div class="product-info">
-          <h3>Maçã Orgânica</h3>
-          <p>R$ 12,90/kg</p>
-          <button class="btn btn-primary">Comprar</button>
-        </div>
-      </div>
+  <h2>Destaques do dia 🔥</h2>
 
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="Queijo">
-        <div class="product-info">
-          <h3>Queijo Colonial</h3>
-          <p>R$ 29,90</p>
-          <button class="btn btn-primary">Comprar</button>
-        </div>
-      </div>
+  <div id="products" class="grid"></div>
 
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=800&q=80" alt="Mel">
-        <div class="product-info">
-          <h3>Mel Puro</h3>
-          <p>R$ 24,90</p>
-          <button class="btn btn-primary">Comprar</button>
-        </div>
-      </div>
-    </div>
+</main>
+
+<!-- CARRINHO LATERAL -->
+<aside class="cart" id="cart">
+  <h2>Seu carrinho</h2>
+
+  <div id="cart-items"></div>
+
+  <div class="cart-footer">
+    <p id="total">Total: R$ 0,00</p>
+    <button onclick="finalizar()">Finalizar compra</button>
   </div>
-</section>
+</aside>
 
-<section class="section light">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Vantagens</span>
-      <h2>Por que comprar no AgroMarket?</h2>
-    </div>
-
-    <div class="features-grid">
-      <div class="card">
-        <h3>🚚 Entrega Rápida</h3>
-        <p>Receba em casa com agilidade.</p>
-      </div>
-         </div>
-      <div class="card">
-        <h3>🌱 Produtos Frescos</h3>
-        <p>Selecionados diretamente do produtor.</p>
-      </div>
-      <div class="card">
-        <h3>🤝 Apoio ao Campo</h3>
-        <p>Valorização da agricultura familiar.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <p>© 2026 AgroMarket — Todos os direitos reservados.</p>
+<footer>
+  <p>AgroForte Market © 2026 — Produção sustentável e equilíbrio com a natureza 🌎</p>
 </footer>
 
 <script src="script.js"></script>
